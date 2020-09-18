@@ -1,0 +1,41 @@
+@import "../styles/global";
+
+.header {
+  @include margin-width($width: 95%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem 0;
+}
+
+.navmenu {
+  display: flex;
+  &__navlink,
+  &__authlink {
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 2.4rem;
+    list-style: none;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: .75rem;
+    line-height: .9rem;
+    text-decoration: none;
+    color: #000000;
+  }
+
+  &__join {
+    color: #fff;
+    background: #FFB459;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
+padding: .625rem 1.875rem;
+  }
+}
