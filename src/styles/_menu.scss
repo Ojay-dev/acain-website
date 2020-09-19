@@ -1,0 +1,101 @@
+@import "../styles/config";
+
+.menu-btn {
+  position: absolute;
+  right: 0;
+  height: 20px;
+  width: 28px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  @media screen and(min-width: 1140px) {
+    display: none;
+  }
+
+  &__burger {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    width: 28px;
+    height: 3px;
+    background: #ffb459;
+    @include transition-ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      width: 28px;
+      height: 3px;
+      background: #ffb459;
+      @include transition-ease;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      width: 20px;
+      height: 3px;
+      background: #ffb459;
+      @include transition-ease;
+    }
+
+    &__open {
+      transform: rotate(360deg);
+      background: transparent;
+
+      &::before {
+        transform: rotate(45deg) translate(5px, 8px);
+      }
+
+      &::after {
+        width: 28px;
+        transform: rotate(-45deg) translate(3px, -7px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .navmenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100vh;
+    background: #ffb459;
+    padding-top: 20vh !important;
+    @include transition-ease;
+    transition: all 800ms ease-in-out;
+    z-index: 4;
+
+    &__navlink {
+      // display: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__authlink {
+      margin-right: 7rem !important;
+    }
+
+    &__item {
+      margin-right: 0 !important;
+      padding: 0.8rem 0 !important;
+    }
+
+    &__link {
+      color: white !important;
+      font-size: 16px !important;
+    }
+  }
+
+  .hide {
+    transform: translate(-200%);
+  }
+}

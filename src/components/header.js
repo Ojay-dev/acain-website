@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import styles from "./header.module.scss"
 import logo from "../svgs/logo-header.svg"
@@ -26,13 +26,19 @@ const HeaderLink = props => (
 )
 
 export default () => {
+  const [showMenu, setShowMenu] = useState(false)
+
+  const onBurgerTap = () => {
+    setShowMenu(!showMenu)
+  }
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
         <img src={logo} alt="logo" />
       </div>
 
-      <nav className={styles.navmenu}>
+      <nav className={`${styles.navmenu} ${showMenu ? "" : styles.hide}`}>
         <ul className={styles.navmenu__navlink}>
           {Object.values(nav).map((menu, idx) => (
             <HeaderLink to={menu.to} text={menu.text} key={idx} />
@@ -43,20 +49,34 @@ export default () => {
       <nav>
         <ul className={styles.navmenu__authlink}>
           <li className={styles.navmenu__item}>
-            <Link to="/" className={styles.navmenu__link}>
+            <Link to="/" className={styles.navmenu__authenlink}>
               Log in
             </Link>
           </li>
           <li className={styles.navmenu__item}>
             <Link
               to="/"
-              className={`${styles.navmenu__link} ${styles.navmenu__join}`}
+              className={`${styles.navmenu__authenlink} ${styles.navmenu__join}`}
             >
               Join
             </Link>
           </li>
         </ul>
       </nav>
+
+      <div
+        className={styles.menuBtn}
+        onClick={onBurgerTap}
+        onKeyDown={onBurgerTap}
+        role="button"
+        tabIndex="0"
+      >
+        <span
+          className={`${styles.menuBtn__burger} ${
+            showMenu ? styles.menuBtn__burger__open : ""
+          }`}
+        ></span>
+      </div>
     </header>
   )
 }

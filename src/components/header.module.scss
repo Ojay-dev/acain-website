@@ -1,7 +1,10 @@
 @import "../styles/global";
+@import "../styles/config";
+@import "../styles/menu";
 
 .header {
-  @include margin-width($width: 95%);
+  position: relative;
+  @include margin-width($width: 90%);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,6 +17,13 @@
   &__authlink {
     display: flex;
     padding: 0;
+    margin: 0;
+  }
+
+  &__authlink {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__item {
@@ -25,7 +35,8 @@
     margin-right: 0;
   }
 
-  &__link {
+  &__link,
+  &__authenlink {
     font-weight: 500;
     font-size: 0.75rem;
     line-height: 0.9rem;
@@ -35,6 +46,8 @@
     position: relative;
   }
 
+  
+
   &__hover {
     &::before {
       position: absolute;
@@ -42,7 +55,7 @@
       bottom: 0;
       width: 0%;
       border-bottom: 2px solid #ffb459;
-      transition: all 300ms ease-in-out;
+      transition: width 300ms ease-in-out;
     }
     &:hover::before {
       width: 100%;
