@@ -30,7 +30,7 @@ export default function Home() {
         <div className={styles.imageSection}>
           <img
             src={hero_img}
-            alt="hero image"
+            alt="hero"
             className={styles.imageSection__image}
           />
         </div>
