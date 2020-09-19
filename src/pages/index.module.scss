@@ -1,0 +1,97 @@
+@import "../styles/global";
+
+.hero {
+  @include margin-width();
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.textSection,
+.imageSection {
+  width: 50%;
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+}
+
+.textSection {
+  &__text {
+    font-weight: 600;
+    font-size: 2.375rem;
+    line-height: 2.875rem;
+    margin: 0 0 1.875rem;
+  }
+
+  &__subtext {
+    font-weight: normal;
+    font-size: 1.3rem;
+    line-height: 1.75rem;
+    margin: 0 0 2.75rem;
+  }
+}
+
+.imageSection {
+  display: flex;
+  justify-content: flex-end;
+
+  @media screen and (max-width: 1200px) {
+    justify-content: center;
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+}
+
+.herolink {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25rem;
+
+  &__join {
+    color: #ffffff;
+    background: #ffb459;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
+    text-decoration: none;
+    padding: 1rem 2.8rem;
+    margin-right: 1.875rem;
+  }
+
+  &__find {
+    color: #ffb459;
+    border: 1px solid #ffb459;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 1rem 2.8rem;
+  }
+
+  @media screen and (max-width: 475px) {
+    font-size: .75rem;
+    line-height: .875rem;
+      &__join {
+      padding: 1rem 1.5rem;
+      margin-right: 1rem;
+    }
+    &__find {
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    &__join {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  
+}

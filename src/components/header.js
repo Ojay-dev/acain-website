@@ -18,7 +18,7 @@ const HeaderLink = props => (
     <Link
       to={props.to}
       className={`${styles.navmenu__link} ${styles.navmenu__hover}`}
-      activeStyle={{ borderBottom: "2px solid #FFB459" }}
+      activeClassName={styles.active}
     >
       {props.text}
     </Link>

@@ -14,7 +14,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-@mixin margin-width($width: 80%, $margin: 0 auto) {
+@mixin margin-width($width: 90%, $margin: 0 auto) {
   width: $width;
   margin: $margin;
 }
