@@ -171,7 +171,7 @@
   @include margin-width();
   display: flex;
   flex-direction: column-reverse;
-  
+
   &__link {
     text-align: center;
     margin-top: 3.25rem;
@@ -188,7 +188,7 @@
       position: absolute;
       content: "";
       bottom: 0;
-      width: 15%;
+      width: 5rem;
       border-bottom: 4px solid #ffb459;
     }
   }
@@ -210,5 +210,70 @@
       text-align: left;
       margin-top: 6.25rem;
     }
+  }
+}
+
+.benefitsContainer {
+  background: #ffedd7;
+  padding: 1.125rem 0;
+  margin-top: 8.25rem;
+
+  @media screen and (min-width: 768px) {
+    padding: 3.125rem 0;
+  }
+}
+
+.benefits {
+  @include margin-width();
+
+  &__title {
+    position: relative;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 46px;
+    text-align: center;
+    margin-bottom: 3.125rem;
+    padding-bottom: 9px;
+    @include dash();
+  }
+
+  &__subtitle {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__paragraph {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__point {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 3rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &__point {
+      margin-top: 0;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+}
+
+.benefitsOutline {
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20%;
+    grid-row-gap: 4rem;
+    justify-content: space-between;
   }
 }

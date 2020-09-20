@@ -7,6 +7,10 @@ import reward from "../svgs/reward.svg"
 import increase from "../svgs/increase.svg"
 import happiness from "../svgs/happiness.svg"
 import who_we_are from "../svgs/illustrator.svg"
+import workshop from "../svgs/workshop.svg"
+import presentation from "../svgs/presentation.svg"
+import advisor from "../svgs/advisor.svg"
+import organization from "../svgs/organization.svg"
 
 function Hero() {
   return (
@@ -118,6 +122,85 @@ export default function Home() {
       <Hero />
       <Achievement />
       <About />
+
+      <div className={styles.benefitsContainer}>
+        <div className={styles.benefits}>
+          <h3 className={styles.benefits__title}>Membership Benefit</h3>
+
+          <div className={styles.benefitsOutline}>
+            <div className={styles.benefits__point}>
+              <div>
+                <h4 className={styles.benefits__subtitle}>
+                  Training and Workshops
+                </h4>
+                <p className={styles.benefits__paragraph}>
+                  Members gain valuable technical skills, entrepreneurial skills
+                  and knowledge to help them improve their craft
+                </p>
+              </div>
+              <img
+                src={workshop}
+                alt="workshop icon"
+                className={styles.image}
+              />
+            </div>
+
+            <div className={styles.benefits__point}>
+              <div>
+                <h4 className={styles.benefits__subtitle}>
+                  Information services
+                </h4>
+                <p className={styles.benefits__paragraph}>
+                  Members are able to access the directory of technical skill
+                  providers in order to accelerate and improve the quality of
+                  their work. The directory would include resource providers
+                  such as publishers, printers, distributors, illustrators and
+                  editors
+                </p>
+              </div>
+              <img
+                src={presentation}
+                alt="presentation icon"
+                className={styles.image}
+              />
+            </div>
+
+            <div className={styles.benefits__point}>
+              <div>
+                <h4 className={styles.benefits__subtitle}>Advisory services</h4>
+                <p className={styles.benefits__paragraph}>
+                  Members are able to access the directory of technical skill
+                  providers in order to accelerate and improve the quality of
+                  their work. The directory would include resource providers
+                  such as publishers, printers, distributors, illustrators and
+                  editors
+                </p>
+              </div>
+              <img src={advisor} alt="advisor icon" className={styles.image} />
+            </div>
+
+            <div className={styles.benefits__point}>
+              <div>
+                <h4 className={styles.benefits__subtitle}>
+                  Network and access
+                </h4>
+                <p className={styles.benefits__paragraph}>
+                  Members are able to access the directory of technical skill
+                  providers in order to accelerate and improve the quality of
+                  their work. The directory would include resource providers
+                  such as publishers, printers, distributors, illustrators and
+                  editors
+                </p>
+              </div>
+              <img
+                src={organization}
+                alt="organization icon"
+                className={styles.image}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </Layout>
   )
 }
