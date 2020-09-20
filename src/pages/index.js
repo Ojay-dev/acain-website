@@ -3,6 +3,9 @@ import { Link } from "gatsby"
 import styles from "./index.module.scss"
 import Layout from "../components/layout"
 import hero_img from "../svgs/hero-image.svg"
+import reward from "../svgs/reward.svg"
+import increase from "../svgs/increase.svg"
+import happiness from "../svgs/happiness.svg"
 
 export default function Home() {
   return (
@@ -28,11 +31,37 @@ export default function Home() {
         </div>
 
         <div className={styles.imageSection}>
-          <img
-            src={hero_img}
-            alt="hero"
-            className={styles.imageSection__image}
-          />
+          <img src={hero_img} alt="hero" className={styles.image} />
+        </div>
+      </div>
+
+      <div className={styles.achievement}>
+        <div className={styles.achievementItem}>
+          <img src={happiness} alt="happiness icon" className={styles.image} />
+          <div className={styles.achievementItem__textSection}>
+            <div className={styles.achievementItem__text}>200+</div>
+            <span className={styles.achievementItem__subtext}>
+              Happy Members
+            </span>
+          </div>
+        </div>
+
+        <div className={styles.achievementItem}>
+          <img src={reward} alt="reward icon" className={styles.image} />
+          <div className={styles.achievementItem__textSection}>
+            <div className={styles.achievementItem__text}>150+</div>
+            <span className={styles.achievementItem__subtext}>
+              Achievements
+            </span>
+          </div>
+        </div>
+
+        <div className={styles.achievementItem}>
+          <img src={increase} alt="increase icon" className={styles.image} />
+          <div className={styles.achievementItem__textSection}>
+            <div className={styles.achievementItem__text}>&infin;</div>
+            <span className={styles.achievementItem__subtext}>Benefits</span>
+          </div>
         </div>
       </div>
     </Layout>
