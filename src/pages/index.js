@@ -199,6 +199,12 @@ export default function Home() {
               />
             </div>
           </div>
+
+          <div className={styles.benefits__link}>
+            <Link to="/" className={styles.herolink__find}>
+              See more
+            </Link>
+          </div>
         </div>
       </div>
     </Layout>
