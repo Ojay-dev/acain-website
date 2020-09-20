@@ -11,6 +11,10 @@ import workshop from "../svgs/workshop.svg"
 import presentation from "../svgs/presentation.svg"
 import advisor from "../svgs/advisor.svg"
 import organization from "../svgs/organization.svg"
+import book1 from "../images/book1.png"
+import book2 from "../images/book2.png"
+import book3 from "../images/book3.png"
+import book4 from "../images/book4.png"
 
 function Hero() {
   return (
@@ -204,6 +208,48 @@ export default function Home() {
             <Link to="/" className={styles.herolink__find}>
               See more
             </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.publications}>
+        <h3 className={styles.benefits__title}>Publications</h3>
+        
+        <div className={styles.book}>
+          <div className={styles.book__item}>
+            <img src={book1} alt="Power Cut book" className={styles.image} />
+            <div className={styles.book__title}>Power Cut</div>
+            <span className={styles.book__subtitle}>Tonye Faloughi-Ekezie</span>
+          </div>
+
+          <div className={styles.book__item}>
+            <img
+              src={book2}
+              alt="Fruits and Vegetables book"
+              className={styles.image}
+            />
+            <div className={styles.book__title}>Fruits and Vegetables</div>
+            <span className={styles.book__subtitle}>Tonye Faloughi-Ekezie</span>
+          </div>
+
+          <div className={styles.book__item}>
+            <img
+              src={book3}
+              alt="What is down Syndrome? book"
+              className={styles.image}
+            />
+            <div className={styles.book__title}>What is down Syndrome?</div>
+            <span className={styles.book__subtitle}>Tonye Faloughi-Ekezie</span>
+          </div>
+
+          <div className={styles.book__item}>
+            <img
+              src={book4}
+              alt="I can do it myself book"
+              className={styles.image}
+            />
+            <div className={styles.book__title}>I can do it myself</div>
+            <span className={styles.book__subtitle}>Tonye Faloughi-Ekezie</span>
           </div>
         </div>
       </div>

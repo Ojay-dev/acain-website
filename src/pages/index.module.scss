@@ -283,3 +283,39 @@
     justify-content: space-between;
   }
 }
+
+.publications {
+  @include margin-width($margin: 5.75rem auto 7rem);
+}
+
+.book {
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  grid-row-gap: 3rem;
+
+  &__item {
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin: 0.875rem 0 0.625rem;
+  }
+
+  &__subtitle {
+    font-weight: normal;
+    font-size: 0.75rem;
+    line-height: 0.94rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__item {
+      margin-bottom: 0;
+    }
+  }
+}
