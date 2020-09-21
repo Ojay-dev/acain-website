@@ -289,12 +289,15 @@
 }
 
 .book {
-  display: grid;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  grid-row-gap: 3rem;
 
   &__item {
+    margin-bottom: 3rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__title {
@@ -310,7 +313,7 @@
     line-height: 0.94rem;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     flex-direction: row;
     justify-content: space-between;
 
