@@ -68,6 +68,7 @@ function Achievement() {
     <div className={styles.achievement}>
       {Object.values(achievementDta).map((item, idx) => (
         <AchievementItem
+          key={idx}
           image={item.image}
           text={item.text}
           subtext={item.subtext}
@@ -214,7 +215,7 @@ export default function Home() {
 
       <div className={styles.publications}>
         <h3 className={styles.benefits__title}>Publications</h3>
-        
+
         <div className={styles.book}>
           <div className={styles.book__item}>
             <img src={book1} alt="Power Cut book" className={styles.image} />
