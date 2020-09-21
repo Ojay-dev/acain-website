@@ -1,5 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
+import AOS from "aos"
+import "aos/dist/aos.css"
+
 import styles from "./index.module.scss"
 import Layout from "../components/layout"
 import hero_img from "../svgs/hero-image.svg"
@@ -16,10 +19,19 @@ import book2 from "../images/book2.png"
 import book3 from "../images/book3.png"
 import book4 from "../images/book4.png"
 
+AOS.init()
+
 function Hero() {
   return (
     <div className={styles.hero}>
-      <div className={styles.textSection}>
+      <div
+        className={styles.textSection}
+        data-aos="fade-up"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="50"
+        data-aos-duration="1500"
+        data-aos-offset="0"
+      >
         <h2 className={styles.textSection__text}>
           Welcome to the Association of Children’s Authors and Illustrators of
           Nigeria
@@ -38,7 +50,13 @@ function Hero() {
         </div>
       </div>
 
-      <div className={styles.imageSection}>
+      <div
+        className={styles.imageSection}
+        data-aos="fade-up"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-anchor-placement="bottom-center"
+      >
         <img src={hero_img} alt="hero" className={styles.image} />
       </div>
     </div>
@@ -93,7 +111,13 @@ function AchievementItem({ image, text, subtext }) {
 function About() {
   return (
     <div className={styles.about}>
-      <div className={styles.about__textSection}>
+      <div
+        className={styles.about__textSection}
+        data-aos="fade-up"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-anchor-placement="bottom-center"
+      >
         <h3 className={styles.about__title}>Who We Are</h3>
         <article className={styles.about__article}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat eget
@@ -114,7 +138,13 @@ function About() {
         </div>
       </div>
 
-      <div className={styles.about__imageSection}>
+      <div
+        className={styles.about__imageSection}
+        data-aos="fade-down-left"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-anchor-placement="bottom-center"
+      >
         <img src={who_we_are} alt="An illustrator" className={styles.image} />
       </div>
     </div>
@@ -133,7 +163,13 @@ export default function Home() {
           <h3 className={styles.benefits__title}>Membership Benefit</h3>
 
           <div className={styles.benefitsOutline}>
-            <div className={styles.benefits__point}>
+            <div
+              className={styles.benefits__point}
+              data-aos="fade-right"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-anchor-placement="bottom-center"
+            >
               <div>
                 <h4 className={styles.benefits__subtitle}>
                   Training and Workshops
@@ -150,7 +186,14 @@ export default function Home() {
               />
             </div>
 
-            <div className={styles.benefits__point}>
+            <div
+              className={styles.benefits__point}
+              className={styles.benefits__point}
+              data-aos="fade-left"
+              data-aos-delay="60"
+              data-aos-duration="1000"
+              data-aos-anchor-placement="bottom-center"
+            >
               <div>
                 <h4 className={styles.benefits__subtitle}>
                   Information services
@@ -170,7 +213,14 @@ export default function Home() {
               />
             </div>
 
-            <div className={styles.benefits__point}>
+            <div
+              className={styles.benefits__point}
+              className={styles.benefits__point}
+              data-aos="fade-right"
+              data-aos-delay="70"
+              data-aos-duration="1000"
+              data-aos-anchor-placement="bottom-center"
+            >
               <div>
                 <h4 className={styles.benefits__subtitle}>Advisory services</h4>
                 <p className={styles.benefits__paragraph}>
@@ -184,7 +234,14 @@ export default function Home() {
               <img src={advisor} alt="advisor icon" className={styles.image} />
             </div>
 
-            <div className={styles.benefits__point}>
+            <div
+              className={styles.benefits__point}
+              className={styles.benefits__point}
+              data-aos="fade-left"
+              data-aos-delay="80"
+              data-aos-duration="1000"
+              data-aos-anchor-placement="bottom-center"
+            >
               <div>
                 <h4 className={styles.benefits__subtitle}>
                   Network and access
@@ -205,7 +262,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.benefits__link}>
+          <div
+            className={styles.benefits__link}
+            data-aos="zoom-out-up"
+            data-aos-delay="90"
+            data-aos-duration="1000"
+            data-aos-anchor-placement="bottom-center"
+          >
             <Link to="/" className={styles.herolink__find}>
               See more
             </Link>
@@ -217,13 +280,25 @@ export default function Home() {
         <h3 className={styles.benefits__title}>Publications</h3>
 
         <div className={styles.book}>
-          <div className={styles.book__item}>
+          <div
+            className={styles.book__item}
+            data-aos="fade-up"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-anchor-placement="bottom-center"
+          >
             <img src={book1} alt="Power Cut book" className={styles.image} />
             <div className={styles.book__title}>Power Cut</div>
             <span className={styles.book__subtitle}>Tonye Faloughi-Ekezie</span>
           </div>
 
-          <div className={styles.book__item}>
+          <div
+            className={styles.book__item}
+            data-aos="fade-up"
+            data-aos-delay="250"
+            data-aos-duration="1000"
+            data-aos-anchor-placement="bottom-center"
+          >
             <img
               src={book2}
               alt="Fruits and Vegetables book"
@@ -233,7 +308,13 @@ export default function Home() {
             <span className={styles.book__subtitle}>Tonye Faloughi-Ekezie</span>
           </div>
 
-          <div className={styles.book__item}>
+          <div
+            className={styles.book__item}
+            data-aos="fade-up"
+            data-aos-delay="450"
+            data-aos-duration="1000"
+            data-aos-anchor-placement="bottom-center"
+          >
             <img
               src={book3}
               alt="What is down Syndrome? book"
@@ -243,7 +324,13 @@ export default function Home() {
             <span className={styles.book__subtitle}>Tonye Faloughi-Ekezie</span>
           </div>
 
-          <div className={styles.book__item}>
+          <div
+            className={styles.book__item}
+            data-aos="fade-up"
+            data-aos-delay="650"
+            data-aos-duration="1000"
+            data-aos-anchor-placement="bottom-center"
+          >
             <img
               src={book4}
               alt="I can do it myself book"
