@@ -75,6 +75,10 @@
 }
 
 .member {
+  margin-top: 5rem;
+  &:first-child {
+    margin-top: 0;
+  }
   &__detail {
     display: flex;
     flex-direction: column;
@@ -116,13 +120,18 @@
   @media screen and (min-width: 768px) {
     display: flex;
     align-items: center;
+    margin-top: 0;
+    margin-bottom: 6.25rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     &__detail {
-     width: 40%;
+     width: 30%;
     }
     
     &__info {
-     width: 60%;
+     width: 70%;
     }
 
     &__about {
