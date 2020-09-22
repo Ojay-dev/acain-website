@@ -106,14 +106,14 @@
     font-weight: normal;
     font-size: 1rem;
     line-height: 1.625rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   &__morelink {
     font-weight: 600;
     font-size: 1rem;
     line-height: 1.25rem;
-    color: #FFB459;
+    color: #ffb459;
     text-decoration: none;
   }
 
@@ -127,15 +127,85 @@
     }
 
     &__detail {
-     width: 30%;
+      width: 30%;
     }
-    
+
     &__info {
-     width: 70%;
+      width: 70%;
     }
 
     &__about {
       margin: 0;
     }
+  }
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffedd7;
+  padding: 6.25rem 5%;
+
+  &__title {
+    font-weight: 600;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    margin: 0 0 1.375rem;
+    text-align: center;
+  }
+}
+
+.newsletterForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__input {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: none;
+    margin-bottom: 0.8rem;
+    &::placeholder {
+      font-weight: normal;
+      font-size: 1rem;
+      line-height: 1.4rem;
+      color: #cccccc;
+    }
+  }
+
+  &__submit {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: #ffffff;
+    background: #ffb459;
+    border-radius: 10px;
+    border: none;
+    padding: 1rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 70%;
+    flex-direction: row;
+    align-items: center;
+
+    &__input {
+      margin-bottom: 0;
+      margin-right: 0.875rem;
+    }
+
+    &__submit {
+      padding: 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 60%;
   }
 }

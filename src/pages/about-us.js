@@ -155,6 +155,27 @@ export default function () {
           She has successfully illustrated 3 children's books with  2 more due early 2021. She is a firm believer in the power of illustrated pictures to convey the meaning of a story and illuminate the minds of children, thereby sparking a love of reading early on in life."
         />
       </div>
+
+      <div className={styles.newsletter}>
+        <h3 className={styles.newsletter__title}>Sign up for our newsletter</h3>
+        <form
+          onSubmit={e => {
+            e.preventDefault()
+          }}
+          className={styles.newsletterForm}
+        >
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className={styles.newsletterForm__input}
+          />
+          <input
+            type="submit"
+            value="Subscribe"
+            className={styles.newsletterForm__submit}
+          />
+        </form>
+      </div>
     </Layout>
   )
 }

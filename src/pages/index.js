@@ -23,10 +23,9 @@ function Hero() {
       <div
         className={styles.textSection}
         data-aos="fade-up"
-        data-aos-easing="ease-in-back"
-        data-aos-delay="50"
+        // data-aos-easing="ease-in-back"
+        data-aos-delay="300"
         data-aos-duration="1000"
-        data-aos-offset="0"
       >
         <h2 className={styles.textSection__text}>
           Welcome to the Association of Children’s Authors and Illustrators of
@@ -50,9 +49,9 @@ function Hero() {
         className={styles.imageSection}
         data-aos="fade-up"
         data-aos-easing="ease-in-back"
-        data-aos-delay="450"
+        data-aos-delay="50"
         data-aos-duration="1000"
-        data-aos-offset="0"
+        // data-aos-offset="0"
       >
         <img src={hero_img} alt="hero" className={styles.imageSection__image} />
       </div>
