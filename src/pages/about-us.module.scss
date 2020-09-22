@@ -112,4 +112,21 @@
     color: #FFB459;
     text-decoration: none;
   }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+
+    &__detail {
+     width: 40%;
+    }
+    
+    &__info {
+     width: 60%;
+    }
+
+    &__about {
+      margin: 0;
+    }
+  }
 }

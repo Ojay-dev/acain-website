@@ -9,6 +9,29 @@ import vision from "../svgs/vision.svg"
 import value from "../svgs/value.svg"
 import image1 from "../images/ellipse1.png"
 
+function Member(props) {
+  return (
+    <div className={styles.member}>
+      <div className={styles.member__detail}>
+        <img
+          src={image1}
+          alt={props.name}
+          className={`${styles.image} ${styles.member__image}`}
+        />
+        <h5 className={styles.member__name}>{props.name}</h5>
+        <span className={styles.member__position}>{props.position}</span>
+      </div>
+
+      <div className={styles.member__info}>
+        <p className={styles.member__about}>{props.info}</p>
+        <Link to="#" className={styles.member__morelink}>
+          Read more...
+        </Link>
+      </div>
+    </div>
+  )
+}
+
 export default function () {
   return (
     <Layout>
@@ -82,32 +105,17 @@ export default function () {
 
       <div className={styles.board}>
         <h3 className={styles.board__title}>Our Board members</h3>
-        <div className={styles.member}>
-          <div className={styles.member__detail}>
-            <img
-              src={image1}
-              alt="Olubunmi Aboderin Talabi"
-              className={`${styles.image} ${styles.member__image}`}
-            />
-            <h5 className={styles.member__name}>Olubunmi Aboderin Talabi</h5>
-            <span className={styles.member__position}>
-              Chairman and Trustee
-            </span>
-          </div>
-
-          <div className={styles.member__info}>
-            <p className={styles.member__about}>
-              Olubunmi Aboderin Talabi is an author; the publisher of Clever
-              Clogs Books; the convener of the Akada Children's Book Festival
-              and a Founding Member of the Board of Trustees of the Association
-              of Children’s Authors and Illustrators of Nigeria. She is
-              passionate about creating visually-engaging, culturally-relevant
-              content for children, and has a desire to see steadily increasing
-              literacy rates within her community and others.
-            </p>
-            <Link to="#" className={styles.member__morelink}>Read more...</Link>
-          </div>
-        </div>
+        <Member
+          name="Olubunmi Aboderin Talabi"
+          position="Chairman and Trustee"
+          info="Olubunmi Aboderin Talabi is an author; the publisher of Clever Clogs
+          Books; the convener of the Akada Children's Book Festival and a
+          Founding Member of the Board of Trustees of the Association of
+          Children’s Authors and Illustrators of Nigeria. She is passionate
+          about creating visually-engaging, culturally-relevant content for
+          children, and has a desire to see steadily increasing literacy rates
+          within her community and others."
+        />
       </div>
     </Layout>
   )
