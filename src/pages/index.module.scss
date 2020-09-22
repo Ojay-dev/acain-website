@@ -43,6 +43,13 @@
   @media screen and (max-width: 1200px) {
     justify-content: center;
   }
+ 
+  @media screen and (max-width: 582px) {
+    &__image {
+      width: 100%;
+    }
+  }
+
 }
 
 .image {

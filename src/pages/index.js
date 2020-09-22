@@ -25,7 +25,7 @@ function Hero() {
         data-aos="fade-up"
         data-aos-easing="ease-in-back"
         data-aos-delay="50"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
         data-aos-offset="0"
       >
         <h2 className={styles.textSection__text}>
@@ -49,11 +49,12 @@ function Hero() {
       <div
         className={styles.imageSection}
         data-aos="fade-up"
-        data-aos-delay="50"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="450"
         data-aos-duration="1000"
-        data-aos-anchor-placement="bottom-center"
+        data-aos-offset="0"
       >
-        <img src={hero_img} alt="hero" className={styles.image} />
+        <img src={hero_img} alt="hero" className={styles.imageSection__image} />
       </div>
     </div>
   )
@@ -95,7 +96,7 @@ function Achievement() {
 function AchievementItem({ image, text, subtext }) {
   return (
     <div className={styles.achievementItem}>
-      <img src={image} alt="happiness icon" className={styles.image} />
+      <img src={image} alt="happiness icon" />
       <div className={styles.achievementItem__textSection}>
         <div className={styles.achievementItem__text}>{text}</div>
         <span className={styles.achievementItem__subtext}>{subtext}</span>
@@ -147,7 +148,7 @@ function About() {
   )
 }
 
-export default function() {
+export default function () {
   return (
     <Layout>
       <Hero />
@@ -175,15 +176,10 @@ export default function() {
                   and knowledge to help them improve their craft
                 </p>
               </div>
-              <img
-                src={workshop}
-                alt="workshop icon"
-                className={styles.image}
-              />
+              <img src={workshop} alt="workshop icon" />
             </div>
 
             <div
-              className={styles.benefits__point}
               className={styles.benefits__point}
               data-aos="fade-left"
               data-aos-delay="60"
@@ -202,15 +198,10 @@ export default function() {
                   editors
                 </p>
               </div>
-              <img
-                src={presentation}
-                alt="presentation icon"
-                className={styles.image}
-              />
+              <img src={presentation} alt="presentation icon" />
             </div>
 
             <div
-              className={styles.benefits__point}
               className={styles.benefits__point}
               data-aos="fade-right"
               data-aos-delay="70"
@@ -227,11 +218,10 @@ export default function() {
                   editors
                 </p>
               </div>
-              <img src={advisor} alt="advisor icon" className={styles.image} />
+              <img src={advisor} alt="advisor icon" />
             </div>
 
             <div
-              className={styles.benefits__point}
               className={styles.benefits__point}
               data-aos="fade-left"
               data-aos-delay="80"
@@ -250,11 +240,7 @@ export default function() {
                   editors
                 </p>
               </div>
-              <img
-                src={organization}
-                alt="organization icon"
-                className={styles.image}
-              />
+              <img src={organization} alt="organization icon" />
             </div>
           </div>
 
