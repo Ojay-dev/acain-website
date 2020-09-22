@@ -1,0 +1,115 @@
+@import "../styles/global";
+
+.we_are {
+  @include margin-width();
+  margin-bottom: 4.25rem;
+  &__title {
+    @include left-dash-title();
+  }
+}
+
+.image {
+  @include image();
+}
+
+.missionSection {
+  @include margin-width();
+  margin-bottom: 6.5rem !important;
+
+  &__list {
+    padding: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    @include margin-width($width: 70%);
+    margin-bottom: 8.5rem !important;
+  }
+}
+
+.point {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    width: 35%;
+  }
+
+  &__text {
+    margin-top: 1rem;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 1.675rem;
+    line-height: 2.3rem;
+    list-style: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row-reverse;
+    &:nth-child(even) {
+      flex-direction: row;
+    }
+
+    &__text {
+      margin: 0 1rem;
+    }
+  }
+}
+
+.board {
+  @include margin-width();
+  margin-bottom: 6.25rem;
+
+  &__title {
+    @include center-dash-title();
+    margin: 1rem 0 2rem;
+  }
+}
+
+.member {
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__image {
+    width: 50%;
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin: 0.625rem 0 0;
+  }
+
+  &__position {
+    font-weight: normal;
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+  }
+
+  &__about {
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    margin-bottom: .5rem;
+  }
+
+  &__morelink {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: #FFB459;
+    text-decoration: none;
+  }
+}

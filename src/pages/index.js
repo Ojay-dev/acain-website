@@ -1,7 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import AOS from "aos"
-import "aos/dist/aos.css"
 
 import styles from "./index.module.scss"
 import Layout from "../components/layout"
@@ -18,8 +16,6 @@ import book1 from "../images/book1.png"
 import book2 from "../images/book2.png"
 import book3 from "../images/book3.png"
 import book4 from "../images/book4.png"
-
-AOS.init()
 
 function Hero() {
   return (
@@ -151,7 +147,7 @@ function About() {
   )
 }
 
-export default function Home() {
+export default function() {
   return (
     <Layout>
       <Hero />

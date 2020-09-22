@@ -46,8 +46,7 @@
 }
 
 .image {
-  max-width: 100%;
-  height: auto;
+ @include image();
 }
 
 .herolink {
@@ -179,19 +178,8 @@
   }
 
   &__title {
-    position: relative;
-    font-weight: bold;
-    font-size: 38px;
-    line-height: 46px;
-    padding-bottom: 9px;
-
-    &::before {
-      position: absolute;
-      content: "";
-      bottom: 0;
-      width: 5rem;
-      border-bottom: 4px solid #ffb459;
-    }
+    @include left-dash-title();
+  
   }
 
   @media screen and (min-width: 768px) {
@@ -228,14 +216,7 @@
   @include margin-width();
 
   &__title {
-    position: relative;
-    font-weight: bold;
-    font-size: 38px;
-    line-height: 46px;
-    text-align: center;
-    margin-bottom: 3.125rem;
-    padding-bottom: 9px;
-    @include dash();
+    @include center-dash-title();
   }
 
   &__subtitle {

@@ -1,0 +1,17 @@
+@import "../styles/global";
+
+.pageTitle {
+  background: #ffedd7;
+  padding: 3rem 0;
+  &__text {
+    @include margin-width();
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 3.7rem;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 6.25rem 0;
+  }
+}
