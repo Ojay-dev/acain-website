@@ -6,24 +6,26 @@ import logo from "../svgs/logo-header.svg"
 const nav = {
   home: { to: "/", text: "Home" },
   "about-us": { to: "/about-us", text: "About us" },
-  Membership: { to: "/membership", text: "Membership" },
+  Membership: { to: "/membership", text: "Membership", },
   Publications: { to: "/publications", text: "Publications" },
   Directory: { to: "/mirectory", text: "Directory" },
-  "News-&-Events": { to: "/News-&-Events", text: "News & Events" },
+  "News-&-Events": { to: "/akada-book-festival", text: "News & Events" },
   Contact: { to: "/contact", text: "Contact" },
 }
 
-const HeaderLink = props => (
-  <li className={styles.navmenu__item}>
-    <Link
-      to={props.to}
-      className={`${styles.navmenu__link} ${styles.navmenu__hover}`}
-      activeClassName={styles.active}
-    >
-      {props.text}
-    </Link>
-  </li>
-)
+const HeaderLink = props => {
+  return (
+    <li className={styles.navmenu__item}>
+      <Link
+        to={props.to}
+        className={`${styles.navmenu__link} ${styles.navmenu__hover}`}
+        activeClassName={styles.active}
+      >
+        {props.text}
+      </Link>
+    </li>
+  )
+}
 
 export default () => {
   const [showMenu, setShowMenu] = useState(false)
