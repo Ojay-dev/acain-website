@@ -2,28 +2,61 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import styles from "./header.module.scss"
 import logo from "../svgs/logo-header.svg"
+import expand from "../svgs/expand_more.svg"
 
 const nav = {
   home: { to: "/", text: "Home" },
   "about-us": { to: "/about-us", text: "About us" },
-  Membership: { to: "/membership", text: "Membership", },
+  Membership: {
+    to: "/membership",
+    text: "Membership",
+    dropdown: true,
+    dropdownMenu: ["Types of Membership", "Membership benefits"],
+  },
   Publications: { to: "/publications", text: "Publications" },
-  Directory: { to: "/mirectory", text: "Directory" },
-  "News-&-Events": { to: "/akada-book-festival", text: "News & Events" },
+  Directory: {
+    to: "/directory",
+    text: "Directory",
+    dropdown: true,
+    dropdownMenu: ["Members directory", "Professional directory"],
+  },
+  "News-&-Events": {
+    to: "/akada-book-festival",
+    text: "News & Events",
+    dropdown: true,
+    dropdownMenu: ["Ake Festival", "Akada Book Festival", "Gallery"],
+  },
   Contact: { to: "/contact", text: "Contact" },
 }
 
 const HeaderLink = props => {
   return (
-    <li className={styles.navmenu__item}>
-      <Link
-        to={props.to}
-        className={`${styles.navmenu__link} ${styles.navmenu__hover}`}
-        activeClassName={styles.active}
-      >
-        {props.text}
-      </Link>
-    </li>
+    <div className={styles.navmenu__item}>
+      <li>
+        <Link
+          to={props.to}
+          className={`${styles.navmenu__link} ${styles.navmenu__hover}`}
+          activeClassName={styles.active}
+        >
+          {props.text} {props.dropdown ? <img src={expand} alt="" /> : null}
+        </Link>
+      </li>
+      {props.dropdown ? (
+        <div className={styles.navmenu__dropdownContent}>
+          {props.dropdownMenu.map((submenu, idx) => {
+            return (
+              <a
+                href={`/${submenu.toLowerCase().split(" ").join("-")}`}
+                className={styles.navmenu__dropdownLink}
+                key={idx}
+              >
+                {submenu}
+              </a>
+            )
+          })}
+        </div>
+      ) : null}
+    </div>
   )
 }
 
@@ -43,19 +76,25 @@ export default () => {
       <nav className={`${styles.navmenu} ${showMenu ? "" : styles.hide}`}>
         <ul className={styles.navmenu__navlink}>
           {Object.values(nav).map((menu, idx) => (
-            <HeaderLink to={menu.to} text={menu.text} key={idx} />
+            <HeaderLink
+              to={menu.to}
+              text={menu.text}
+              key={idx}
+              dropdown={menu.dropdown}
+              dropdownMenu={menu.dropdownMenu}
+            />
           ))}
         </ul>
       </nav>
 
       <nav>
         <ul className={styles.navmenu__authlink}>
-          <li className={styles.navmenu__item}>
+          <li className={styles.navmenu__list}>
             <Link to="/" className={styles.navmenu__authenlink}>
               Log in
             </Link>
           </li>
-          <li className={styles.navmenu__item}>
+          <li className={styles.navmenu__list}>
             <Link
               to="/"
               className={`${styles.navmenu__authenlink} ${styles.navmenu__join}`}
