@@ -6,6 +6,12 @@
   &__title {
     @include left-dash-title();
   }
+
+  &__subtitle {
+    font-weight: normal;
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
 }
 
 .image {
