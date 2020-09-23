@@ -22,10 +22,9 @@ function Hero() {
     <div className={styles.hero}>
       <div
         className={styles.textSection}
-        data-aos="fade-up"
-        // data-aos-easing="ease-in-back"
-        data-aos-delay="300"
-        data-aos-duration="1000"
+        // data-aos="fade-up"
+        // data-aos-delay="300"
+        // data-aos-duration="1000"
       >
         <h2 className={styles.textSection__text}>
           Welcome to the Association of Children’s Authors and Illustrators of
@@ -47,11 +46,10 @@ function Hero() {
 
       <div
         className={styles.imageSection}
-        data-aos="fade-up"
-        data-aos-easing="ease-in-back"
-        data-aos-delay="50"
-        data-aos-duration="1000"
-        // data-aos-offset="0"
+        // data-aos="fade-up"
+        // data-aos-easing="ease-in-back"
+        // data-aos-delay="50"
+        // data-aos-duration="1000"
       >
         <img src={hero_img} alt="hero" className={styles.imageSection__image} />
       </div>
@@ -109,10 +107,10 @@ function About() {
     <div className={styles.about}>
       <div
         className={styles.about__textSection}
-        data-aos="fade-up"
-        data-aos-delay="50"
-        data-aos-duration="1000"
-        data-aos-anchor-placement="bottom-center"
+        // data-aos="fade-up"
+        // data-aos-delay="50"
+        // data-aos-duration="1000"
+        // data-aos-anchor-placement="bottom-center"
       >
         <h3 className={styles.about__title}>Who We Are</h3>
         <article className={styles.about__article}>
@@ -136,10 +134,10 @@ function About() {
 
       <div
         className={styles.about__imageSection}
-        data-aos="fade-down-left"
-        data-aos-delay="50"
-        data-aos-duration="1000"
-        data-aos-anchor-placement="bottom-center"
+        // data-aos="fade-down-left"
+        // data-aos-delay="50"
+        // data-aos-duration="1000"
+        // data-aos-anchor-placement="bottom-center"
       >
         <img src={who_we_are} alt="An illustrator" className={styles.image} />
       </div>
@@ -161,10 +159,10 @@ export default function () {
           <div className={styles.benefitsOutline}>
             <div
               className={styles.benefits__point}
-              data-aos="fade-right"
-              data-aos-delay="50"
-              data-aos-duration="1000"
-              data-aos-anchor-placement="bottom-center"
+              // data-aos="fade-right"
+              // data-aos-delay="50"
+              // data-aos-duration="1000"
+              // data-aos-anchor-placement="bottom-center"
             >
               <div>
                 <h4 className={styles.benefits__subtitle}>
@@ -180,10 +178,10 @@ export default function () {
 
             <div
               className={styles.benefits__point}
-              data-aos="fade-left"
-              data-aos-delay="60"
-              data-aos-duration="1000"
-              data-aos-anchor-placement="bottom-center"
+              // data-aos="fade-left"
+              // data-aos-delay="60"
+              // data-aos-duration="1000"
+              // data-aos-anchor-placement="bottom-center"
             >
               <div>
                 <h4 className={styles.benefits__subtitle}>
@@ -202,10 +200,10 @@ export default function () {
 
             <div
               className={styles.benefits__point}
-              data-aos="fade-right"
-              data-aos-delay="70"
-              data-aos-duration="1000"
-              data-aos-anchor-placement="bottom-center"
+              // data-aos="fade-right"
+              // data-aos-delay="70"
+              // data-aos-duration="1000"
+              // data-aos-anchor-placement="bottom-center"
             >
               <div>
                 <h4 className={styles.benefits__subtitle}>Advisory services</h4>
@@ -222,10 +220,10 @@ export default function () {
 
             <div
               className={styles.benefits__point}
-              data-aos="fade-left"
-              data-aos-delay="80"
-              data-aos-duration="1000"
-              data-aos-anchor-placement="bottom-center"
+              // data-aos="fade-left"
+              // data-aos-delay="80"
+              // data-aos-duration="1000"
+              // data-aos-anchor-placement="bottom-center"
             >
               <div>
                 <h4 className={styles.benefits__subtitle}>
@@ -245,10 +243,10 @@ export default function () {
 
           <div
             className={styles.benefits__link}
-            data-aos="zoom-out-up"
-            data-aos-delay="90"
-            data-aos-duration="1000"
-            data-aos-anchor-placement="bottom-center"
+            // data-aos="zoom-out-up"
+            // data-aos-delay="90"
+            // data-aos-duration="1000"
+            // data-aos-anchor-placement="bottom-center"
           >
             <Link to="/" className={styles.herolink__find}>
               See more
@@ -262,11 +260,11 @@ export default function () {
 
         <div className={styles.book}>
           <div
-            className={styles.book__item}
-            data-aos="fade-up"
-            data-aos-delay="50"
-            data-aos-duration="1000"
-            data-aos-anchor-placement="bottom-center"
+            // className={styles.book__item}
+            // data-aos="fade-up"
+            // data-aos-delay="50"
+            // data-aos-duration="1000"
+            // data-aos-anchor-placement="bottom-center"
           >
             <img src={book1} alt="Power Cut book" className={styles.image} />
             <div className={styles.book__title}>Power Cut</div>
@@ -275,10 +273,10 @@ export default function () {
 
           <div
             className={styles.book__item}
-            data-aos="fade-up"
-            data-aos-delay="250"
-            data-aos-duration="1000"
-            data-aos-anchor-placement="bottom-center"
+            // data-aos="fade-up"
+            // data-aos-delay="250"
+            // data-aos-duration="1000"
+            // data-aos-anchor-placement="bottom-center"
           >
             <img
               src={book2}
@@ -291,10 +289,10 @@ export default function () {
 
           <div
             className={styles.book__item}
-            data-aos="fade-up"
-            data-aos-delay="450"
-            data-aos-duration="1000"
-            data-aos-anchor-placement="bottom-center"
+            // data-aos="fade-up"
+            // data-aos-delay="450"
+            // data-aos-duration="1000"
+            // data-aos-anchor-placement="bottom-center"
           >
             <img
               src={book3}
@@ -307,10 +305,10 @@ export default function () {
 
           <div
             className={styles.book__item}
-            data-aos="fade-up"
-            data-aos-delay="650"
-            data-aos-duration="1000"
-            data-aos-anchor-placement="bottom-center"
+            // data-aos="fade-up"
+            // data-aos-delay="650"
+            // data-aos-duration="1000"
+            // data-aos-anchor-placement="bottom-center"
           >
             <img
               src={book4}
