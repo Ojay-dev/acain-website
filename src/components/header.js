@@ -8,14 +8,14 @@ const nav = {
   home: { to: "/", text: "Home" },
   "about-us": { to: "/about-us", text: "About us" },
   Membership: {
-    to: "/membership",
+    to: "#",
     text: "Membership",
     dropdown: true,
     dropdownMenu: ["Types of Membership", "Membership benefits"],
   },
   Publications: { to: "/publications", text: "Publications" },
   Directory: {
-    to: "/directory",
+    to: "#",
     text: "Directory",
     dropdown: true,
     dropdownMenu: ["Members directory", "Professional directory"],
