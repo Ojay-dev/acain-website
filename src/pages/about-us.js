@@ -43,15 +43,9 @@ export default function () {
       <div className={styles.we_are}>
         <h3 className={styles.we_are__title}>Who We Are</h3>
         <p className={styles.we_are__subtitle}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat eget
-          odio lobortis ut tortor. Arcu porttitor bibendum lobortis molestie sit
-          natoque scelerisque. Ultrices fermentum sapien nulla in velit et
-          sapien. <br />
-          <br /> Nunc faucibus consequat donec dictum eu neque dui faucibus.
-          Urna nunc arcu ante id nisi mi luctus. Auctor porta amet, amet,
-          gravida. Sit proin aliquam auctor cras tincidunt consectetur. Sit
-          felis mi sagittis tortor felis in enim, pellentesque lacus. Congue mi
-          lobortis adipiscing pellentesque in sagittis eget sit.
+          ACAIN exists to answer the questions “Where can I find the support I
+          need to improve my creativity as a children’s book author, illustrator
+          and editor as well as thrive from it?”
         </p>
       </div>
 
