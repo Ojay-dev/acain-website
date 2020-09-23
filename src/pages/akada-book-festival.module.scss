@@ -66,9 +66,7 @@
   &__subvalue {
     font-weight: 500;
     font-size: 1rem;
-    // font-size: 1.5rem;
     line-height: 1.3rem;
-    // line-height: 1.8rem;
     color: #333333;
     margin-top: 0.5rem;
   }
@@ -86,7 +84,76 @@
       font-size: 1.5rem;
       line-height: 1.8rem;
       margin-top: 0;
-      margin-left: .8rem;
+      margin-left: 0.8rem;
     }
+  }
+}
+
+.dateSection {
+  @include margin-width();
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  &__value {
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin: 0 0 0.625rem;
+  }
+
+  &__subtext {
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin: 0;
+  }
+
+  &__note {
+    color: #d13030;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    margin-bottom: 6.25rem;
+
+    &__value {
+      margin: 0;
+    }
+  }
+}
+
+.aboutEvent {
+  @include margin-width();
+  margin-bottom: 4rem;
+
+  &__text {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 212.1%;
+  }
+}
+
+.moreEvent {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6.5rem;
+
+  &__link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffb459;
+    border: 1px solid #ffb459;
+    box-sizing: border-box;
+    padding: 1rem 2.8rem;
+    text-decoration: none;
   }
 }
