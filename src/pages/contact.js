@@ -51,7 +51,7 @@ export default function () {
           className={styles.form}
         >
           <div className={styles.form__row}>
-            <div className={styles.form__inputSection}>
+            <div className={`${styles.form__inputSection} ${styles.form__col}`}>
               <label htmlFor="Name" className={styles.form__label}>
                 Name
               </label>
@@ -63,7 +63,7 @@ export default function () {
               />
             </div>
 
-            <div className={styles.form__inputSection}>
+            <div className={`${styles.form__inputSection} ${styles.form__col}`}>
               <label htmlFor="organisation" className={styles.form__label}>
                 Your Organisation
               </label>
@@ -77,7 +77,7 @@ export default function () {
           </div>
 
           <div className={styles.form__row}>
-            <div className={styles.form__inputSection}>
+            <div className={`${styles.form__inputSection} ${styles.form__col}`}>
               <label htmlFor="email" className={styles.form__label}>
                 Email Address
               </label>
@@ -89,7 +89,7 @@ export default function () {
               />
             </div>
 
-            <div className={styles.form__inputSection}>
+            <div className={`${styles.form__inputSection} ${styles.form__col}`}>
               <label htmlFor="phone" className={styles.form__label}>
                 Phone. No
               </label>
