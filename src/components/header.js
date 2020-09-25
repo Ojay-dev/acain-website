@@ -37,8 +37,8 @@ const HeaderLink = props => {
   }
 
   return (
-    <div className={styles.navmenu__item} onClick={showMobileDropdown}>
-      <li>
+    <div className={styles.navmenu__item}>
+      <li onClick={showMobileDropdown}>
         <Link
           to={props.to}
           className={`${styles.navmenu__link} ${styles.navmenu__hover}`}
