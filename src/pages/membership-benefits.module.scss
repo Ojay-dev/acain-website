@@ -1,0 +1,54 @@
+@import "../styles/global";
+
+.memberBenefits {
+  @include margin-width($margin: 4.4rem auto);
+}
+
+.benefits {
+  margin-top: 3.75rem;
+
+  &__item {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 3.125rem;
+  }
+
+  &__list {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    list-style: circle;
+  }
+
+  &__itemlist {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    list-style-type: circle;
+    margin-bottom: 3.125rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // &__otherItems {
+  //   padding: 0;
+  //   margin-left: 10%;
+  // }
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 4rem;
+    &__item {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    &__title {
+      margin: 0;
+    }
+  }
+}

@@ -23,16 +23,30 @@
 .textSection {
   &__text {
     font-weight: bold;
-    font-size: 2.375rem;
-    line-height: 2.875rem;
-    margin: 0 0 1.875rem;
+    font-size: 1.5rem !important;
+    line-height: 1.8rem !important;
+    margin: 0 0 .8rem;
   }
 
   &__subtext {
-    font-weight: normal;
-    font-size: 1.3rem;
-    line-height: 1.75rem;
+    font-size: 0.8rem;
+    line-height: 1rem;
     margin: 0 0 2.75rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    &__text {
+      font-size: 2.375rem !important;
+      line-height: 2.875rem !important;
+      margin: 0 0 1.875rem !important;
+    }
+
+    &__subtext {
+      font-weight: normal;
+      font-size: 1.3rem !important;
+      line-height: 1.75rem !important;
+      margin: 0 0 2.75rem !important;
+    }
   }
 }
 
@@ -45,10 +59,6 @@
   }
 
   @media screen and (max-width: 582px) {
-    &__text {
-      font-size: 1.5rem;
-      line-height: 1.8rem;
-    }
     &__image {
       width: 100%;
     }
@@ -110,7 +120,7 @@
 }
 
 .achievement {
-  @include margin-width($margin: 8.9rem auto 9.6rem);
+  @include margin-width($margin: 5.9rem auto 7.6rem);
   display: flex;
   flex-direction: column;
   align-items: center;
