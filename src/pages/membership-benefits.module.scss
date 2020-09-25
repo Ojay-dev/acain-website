@@ -2,6 +2,12 @@
 
 .memberBenefits {
   @include margin-width($margin: 4.4rem auto);
+
+  &__text {
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.7rem;
+  }
 }
 
 .benefits {
@@ -12,18 +18,23 @@
     flex-direction: column-reverse;
     margin-bottom: 3.125rem;
   }
+  &__text {
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.7rem;
+  }
 
   &__list {
     font-weight: 600;
     font-size: 1rem;
-    line-height: 1.25rem;
+    line-height: 1.7rem;
     list-style: circle;
   }
 
   &__itemlist {
     font-weight: bold;
     font-size: 1rem;
-    line-height: 1.25rem;
+    line-height: 1.7rem;
     list-style-type: circle;
     margin-bottom: 3.125rem;
 

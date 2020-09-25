@@ -31,7 +31,7 @@ export default function () {
               <ul>
                 <div>
                   <li className={styles.benefits__list}>Creative skills enhancement</li>
-                  <p>
+                  <p className={styles.benefits__text}>
                     ACAIN members gain valuable technical skills to help them
                     improve their craft.
                   </p>
@@ -39,7 +39,7 @@ export default function () {
 
                 <div>
                   <li className={styles.benefits__list}>Entrepreneurial skills enhancement</li>
-                  <p>
+                  <p className={styles.benefits__text}>
                     ACAIN members can acquire basic entrepreneurial skills and
                     knowledge to monetize their craft and make it financially
                     viable.
