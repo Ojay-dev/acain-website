@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import styles from "./header.module.scss"
 import logo from "../svgs/logo-header.svg"
-import expand from "../svgs/expand_more.svg"
+// import expand from "../svgs/expand_more.svg"
 
 const nav = {
   home: { to: "/", text: "Home" },
@@ -30,19 +30,41 @@ const nav = {
 }
 
 const HeaderLink = props => {
+  const [showDropdown, setShowDropdown] = useState(false)
+
+  function showMobileDropdown() {
+    setShowDropdown(!showDropdown)
+  }
+
   return (
-    <div className={styles.navmenu__item}>
+    <div className={styles.navmenu__item} onClick={showMobileDropdown}>
       <li>
         <Link
           to={props.to}
           className={`${styles.navmenu__link} ${styles.navmenu__hover}`}
           activeClassName={styles.active}
         >
-          {props.text} {props.dropdown ? <img src={expand} alt="" /> : null}
+          {props.text}{" "}
+          {props.dropdown ? (
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 10 10"
+              // fill="none"
+              className={styles.navmenu__icon}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M6.9125 3.4563L5 5.36463L3.0875 3.4563L2.5 4.0438L5 6.5438L7.5 4.0438L6.9125 3.4563Z" />
+            </svg>
+          ) : null}
         </Link>
       </li>
       {props.dropdown ? (
-        <div className={styles.navmenu__dropdownContent}>
+        <div
+          className={`${styles.navmenu__dropdownContent} ${
+            showDropdown ? "" : styles.none
+          }`}
+        >
           {props.dropdownMenu.map((submenu, idx) => {
             return (
               <a

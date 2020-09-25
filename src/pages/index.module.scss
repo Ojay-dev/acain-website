@@ -43,17 +43,20 @@
   @media screen and (max-width: 1200px) {
     justify-content: center;
   }
- 
+
   @media screen and (max-width: 582px) {
+    &__text {
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+    }
     &__image {
       width: 100%;
     }
   }
-
 }
 
 .image {
- @include image();
+  @include image();
 }
 
 .herolink {
@@ -186,7 +189,6 @@
 
   &__title {
     @include left-dash-title();
-  
   }
 
   @media screen and (min-width: 768px) {
