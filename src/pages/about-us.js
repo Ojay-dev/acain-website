@@ -27,7 +27,12 @@ function Member(props) {
       </div>
 
       <div className={styles.member__info}>
-        <p className={styles.member__about}>{props.info}</p>
+        <p
+          className={styles.member__about}
+          dangerouslySetInnerHTML={{ __html: props.info }}
+        />
+        {/* {props.info}
+        </p> */}
         <Link to="#" className={styles.member__morelink}>
           Read more...
         </Link>
@@ -108,7 +113,7 @@ export default function () {
           name="Olubunmi Aboderin Talabi"
           position="Chairman and Trustee"
           info="Olubunmi Aboderin Talabi is an author; the publisher of Clever Clogs
-          Books; the convener of the Akada Children's Book Festival and a
+          Books; the convener of the <b>Akada Children's Book Festival</b> and a
           Founding Member of the Board of Trustees of the Association of
           Children’s Authors and Illustrators of Nigeria. She is passionate
           about creating visually-engaging, culturally-relevant content for
@@ -119,16 +124,16 @@ export default function () {
           image={image2}
           name="Chioma Momah"
           position="Vice Chairman and Trustee"
-          info="Chioma Momah is a lawyer, writer and inspirational/parenting blogger. This mother of four is the author of the children's books <em>First day at the Big School</  em> and “Fun Day at the Museum” as well as the Goals, Gratitude and Growth Journal.
-          Chioma is also the founder of Let's <em>Encourage A Reading Nation (L.E.A.R.N)</em> which is aimed at improving literacy among children.
-          "
+          info={`Chioma Momah is a lawyer, writer and inspirational/parenting blogger. This mother of four is the author of the children's books <b>"First day at the Big School"</b> and <b>“Fun Day at the Museum”</b> as well as the <b>Goals, Gratitude and Growth Journal</b>.
+          Chioma is also the founder of <b>Let's Encourage A Reading Nation (L.E.A.R.N)</b> which is aimed at improving literacy among children.
+          `}
         />
         <Member
           image={image3}
           name="Tonye Faloughi-Ekezie"
           position="Secretary and Trustee"
           info="Tonye Faloughi-Ekezie is a wife, mother and entrepreneur. As the
-          head of TEEOF Media, she consults on media and entertainment
+          <b>head of TEEOF Media</b>, she consults on media and entertainment
           projects for a range of clients. <br/><br/>
           
           In her early years Tonye attended school and university in the UK and USA, before eventually relocating back to Nigeria, working on, and commissioning major projects for such companies as Endemol South Africa, MNet and Storm 360. Imbibed with an entrepreneurial spirit from her father, Tonye started her own company, TEEOF Media, in 2011.

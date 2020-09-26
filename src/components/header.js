@@ -112,8 +112,8 @@ export default () => {
       <nav>
         <ul className={styles.navmenu__authlink}>
           <li className={styles.navmenu__list}>
-            <Link to="/" className={styles.navmenu__authenlink}>
-              Log in
+            <Link to="/sign-in" className={styles.navmenu__authenlink}>
+              Sign in
             </Link>
           </li>
           <li className={styles.navmenu__list}>
