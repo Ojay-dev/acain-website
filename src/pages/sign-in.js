@@ -22,7 +22,7 @@ export default function () {
           <label htmlFor="password" className={styles.login__label}>
             Password
           </label>
-          <input type="text" name="password" placeholder="Password" className={styles.login__input} />
+          <input type="password" name="password" placeholder="Password" className={styles.login__input} />
         </div>
 
         <span className={styles.login__subtext}>
