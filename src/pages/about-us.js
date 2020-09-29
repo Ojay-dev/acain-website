@@ -30,7 +30,7 @@ function Member(props) {
           className={styles.member__about}
           dangerouslySetInnerHTML={{ __html: props.info }}
         />
-        <Link to="#" className={styles.member__morelink}>
+        <Link to={props.link} className={styles.member__morelink}>
           Read more...
         </Link>
       </div>
@@ -114,6 +114,7 @@ export default function ({ data }) {
             name={node.frontmatter.title}
             position={node.frontmatter.position}
             info={node.excerpt}
+            link={node.fields.slug}
           />
         ))}
       </div>
@@ -148,7 +149,7 @@ export const query = graphql`
       edges {
         node {
           id
-          excerpt(format: HTML, pruneLength: 500)
+
           frontmatter {
             position
             title
@@ -159,6 +160,10 @@ export const query = graphql`
                 }
               }
             }
+          }
+          excerpt(format: HTML, pruneLength: 500)
+          fields {
+            slug
           }
         }
       }
