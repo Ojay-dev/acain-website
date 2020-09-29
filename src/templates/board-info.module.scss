@@ -1,0 +1,57 @@
+@import "../styles/global";
+
+.boardInfo {
+  @include margin-width($margin: 4rem auto);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // margin: 4rem 0;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin: 0.625rem 0 0;
+  }
+
+  &__position {
+    font-weight: normal;
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+  }
+
+  &__nameSection {
+    text-align: center;
+  }
+
+  &__about {
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    text-align: justify;
+    margin-bottom: 0.5rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    &__detail {
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    &__nameSection {
+      text-align: left;
+    }
+  }
+}
+
+.imageCropper {
+  @include imageCropper($width: 12rem, $height: 12rem);
+  @media screen and (min-width: 768px) {
+    margin-right: 1rem;
+  }
+}

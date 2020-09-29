@@ -149,7 +149,6 @@ export const query = graphql`
       edges {
         node {
           id
-
           frontmatter {
             position
             title
@@ -161,7 +160,7 @@ export const query = graphql`
               }
             }
           }
-          excerpt(format: HTML, pruneLength: 500)
+          excerpt(format: HTML, pruneLength: 490)
           fields {
             slug
           }
