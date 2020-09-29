@@ -1,0 +1,5 @@
+@import "../styles/global";
+.join {
+  @include margin-width();
+  @include auth-form();
+}
