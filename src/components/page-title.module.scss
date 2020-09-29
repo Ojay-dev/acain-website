@@ -3,12 +3,20 @@
 .pageTitle {
   background: #ffedd7;
   padding: 3rem 0;
+  text-align: center;
   &__text {
     @include margin-width();
     font-weight: bold;
     font-size: 2rem;
     line-height: 2.5rem;
-    text-align: center;
+  }
+
+  &__subtext {
+    margin-top: .5rem;
+  }
+
+  &__span {
+    color: #ffb459;
   }
 
   @media screen and (min-width: 768px) {
