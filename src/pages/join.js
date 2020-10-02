@@ -1,31 +1,111 @@
-import React from "react"
+import React, { Component } from "react"
 import { Link } from "gatsby"
-import { FormTitle, Input, SubmitInput as Submit } from "../components/input"
+import { FormTitle } from "../components/input"
+import { StepOne, StepTwo, StepThree } from "../components/joinFormSteps"
 import styles from "./join.module.scss"
 
-export default function () {
-  return (
-    <div className={styles.join}>
-      <FormTitle title="Became a member" />
+class Join extends Component {
+  constructor(props) {
+    super(props)
 
-      <form className={styles.login__form}>
-        <div className={styles.login__row}>
-          <Input label="Email" placeholder="abc@xyz.com" />
-        </div>
+    this.state = {
+      currentStep: 1, // Default is Step 1
+      email: "",
+      username: "",
+      password: "",
+    }
 
-        <div className={styles.login__row}>
-          <Input label="Password" placeholder="Password" />
-        </div>
+    // Bind new functions for next and previous
+    this._next = this._next.bind(this)
+    this._prev = this._prev.bind(this)
+  }
 
-        <span className={styles.login__subtext}>
-          Not yet a member?{" "}
-          <Link to="/join" className={styles.login__link}>
-            Join
-          </Link>
-        </span>
+  _next() {
+    let currentStep = this.state.currentStep
+    // If the current step is 1 or 2, then add one on "next" button click
+    currentStep = currentStep >= 2 ? 3 : currentStep + 1
+    this.setState({
+      currentStep: currentStep,
+    })
+  }
 
-        <Submit value="Sign in" />
-      </form>
-    </div>
-  )
+  _prev() {
+    let currentStep = this.state.currentStep
+    // If the current step is 2 or 3, then subtract one on "previous" button click
+    currentStep = currentStep <= 1 ? 1 : currentStep - 1
+    this.setState({
+      currentStep: currentStep,
+    })
+  }
+
+  // The "next" and "previous" button functions
+  get previousButton() {
+    let currentStep = this.state.currentStep
+    // If the current step is not 1, then render the "previous" button
+    if (currentStep !== 1) {
+      return (
+        <button
+          className={`${styles.join__nxtbutton} ${
+            currentStep === 3 ? styles.join__btnMarginRightZero : ""
+          }`}
+          onClick={this._prev}
+        >
+          Previous
+        </button>
+      )
+    }
+    // ...else return nothing
+    return null
+  }
+
+  get nextButton() {
+    let currentStep = this.state.currentStep
+    // If the current step is not 3, then render the "next" button
+    if (currentStep < 3) {
+      return (
+        <button className={`${styles.join__nxtbutton} ${currentStep=== 1 ? styles.join__btnMarginRightZero  : ""} `} onClick={this._next}>
+          Next
+        </button>
+      )
+    }
+    // ...else render nothing
+    return null
+  }
+
+  handleSubmit = event => {
+    event.preventDefault()
+    // const { email, username, password } = this.state
+    // alert(`Your registration detail: \n
+    //   Email: ${email} \n
+    //   Username: ${username} \n
+    //   Password: ${password}`)
+  }
+
+  render() {
+    return (
+      <div className={styles.join}>
+        <FormTitle title="Become a member" />
+
+        <form className={styles.form} onSubmit={this.handleSubmit}>
+          <StepOne currentStep={this.state.currentStep} />
+          <StepTwo currentStep={this.state.currentStep} />
+          <StepThree currentStep={this.state.currentStep} />
+
+          {/* <Submit value="Sign in" /> */}
+
+          <div className={styles.join__buttonArea}>
+            <Link to="sign-in" className={styles.join__link}>
+              Sign in instead
+            </Link>
+            <div>
+              {this.previousButton}
+              {this.nextButton}
+            </div>
+          </div>
+        </form>
+      </div>
+    )
+  }
 }
+
+export default Join

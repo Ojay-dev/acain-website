@@ -119,7 +119,7 @@ export default () => {
           </li>
           <li className={styles.navmenu__list}>
             <Link
-              to="/"
+              to="/join"
               className={`${styles.navmenu__authenlink} ${styles.navmenu__join}`}
             >
               Join

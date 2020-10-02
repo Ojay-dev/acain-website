@@ -5,7 +5,7 @@ import logo from "../svgs/logo-header.svg"
 export function Input(props) {
   return (
     <>
-      <label htmlFor={`${props.label.toLowerCase()}`} className={styles.label}>
+      <label htmlFor={`${props.label.toLowerCase()}`}>
         {props.label}
       </label>
       <input
@@ -14,6 +14,7 @@ export function Input(props) {
         placeholder={props.placeholder}
         className={styles.input}
       />
+
     </>
   )
 }
@@ -32,7 +33,7 @@ export function SubmitInput(props) {
 
 export function FormTitle(props) {
   return (
-    <div>
+    <div className={styles.header}>
       <img src={logo} alt="logo" />
       <h2 className={styles.title}>{props.title}</h2>
     </div>
