@@ -32,7 +32,7 @@ export function StepOne({ currentStep }) {
           <Input
             label="Confirm Password"
             type="password"
-            placeholder="confPassword"
+            placeholder="Confirm Password"
           />
         </div>
       </div>
