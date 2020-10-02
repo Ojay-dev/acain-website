@@ -1,5 +1,6 @@
-import React, { useState } from "react"
-import { Input } from "../components/input"
+import React from "react"
+import { Input, SelectInput, CheckboxInput } from "../components/input"
+import states from "../assets/nigeria-states.json"
 import styles from "./joinFormSteps.module.scss"
 
 export function StepOne({ currentStep }) {
@@ -39,11 +40,12 @@ export function StepOne({ currentStep }) {
   )
 }
 
-export function StepTwo({currentStep}) {
-
+export function StepTwo({ currentStep }) {
   if (currentStep !== 2) {
     return null
   }
+
+  console.log(states)
 
   return (
     <React.Fragment>
@@ -59,7 +61,7 @@ export function StepTwo({currentStep}) {
 
       <div className={styles.form__row}>
         <div className={styles.form__input}>
-          <Input label="State*" type="text" placeholder="" />
+          <SelectInput label="State*" options={states} />
         </div>
 
         <div className={styles.form__input}>
@@ -74,7 +76,7 @@ export function StepTwo({currentStep}) {
   )
 }
 
-export function StepThree({currentStep}) {
+export function StepThree({ currentStep }) {
   if (currentStep !== 3) {
     return null
   }
@@ -82,7 +84,23 @@ export function StepThree({currentStep}) {
   return (
     <React.Fragment>
       <div className={styles.form__input}>
-        <Input label="Membership type  *" type="text" placeholder="Select..." />
+        <SelectInput
+          label="Membership type*"
+          options={[
+            { code: 1, name: "Associate Membership" },
+            { code: 2, name: "Full Membership" },
+          ]}
+        />
+      </div>
+
+      <div className={styles.form__input}>
+        <CheckboxInput
+          label="How do you identify yourself*"
+          options={[
+            { name: "author", value: "An Author" },
+            { name: "illustrator", value: "An Illustrator" },
+          ]}
+        />
       </div>
     </React.Fragment>
   )

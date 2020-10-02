@@ -44,12 +44,7 @@ class Join extends Component {
     // If the current step is not 1, then render the "previous" button
     if (currentStep !== 1) {
       return (
-        <button
-          className={`${styles.join__nxtbutton} ${
-            currentStep === 3 ? styles.join__btnMarginRightZero : ""
-          }`}
-          onClick={this._prev}
-        >
+        <button className={styles.join__nxtbutton} onClick={this._prev}>
           Previous
         </button>
       )
@@ -63,8 +58,26 @@ class Join extends Component {
     // If the current step is not 3, then render the "next" button
     if (currentStep < 3) {
       return (
-        <button className={`${styles.join__nxtbutton} ${currentStep=== 1 ? styles.join__btnMarginRightZero  : ""} `} onClick={this._next}>
+        <button
+          className={`${styles.join__nxtbutton} ${
+            currentStep === 1 ? styles.join__btnMarginRightZero : ""
+          } `}
+          onClick={this._next}
+        >
           Next
+        </button>
+      )
+    }
+
+    if (currentStep === 3) {
+      return (
+        <button
+          className={`${styles.join__nxtbutton} ${
+            currentStep === 1 ? styles.join__btnMarginRightZero : ""
+          } `}
+          type="submit"
+        >
+          Join Now
         </button>
       )
     }
@@ -91,10 +104,8 @@ class Join extends Component {
           <StepTwo currentStep={this.state.currentStep} />
           <StepThree currentStep={this.state.currentStep} />
 
-          {/* <Submit value="Sign in" /> */}
-
           <div className={styles.join__buttonArea}>
-            <Link to="sign-in" className={styles.join__link}>
+            <Link to="/sign-in" className={styles.join__link}>
               Sign in instead
             </Link>
             <div>
