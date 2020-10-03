@@ -7,10 +7,22 @@ export function Input(props) {
     <>
       <label htmlFor={`${props.label.toLowerCase()}`}>{props.label}</label>
       <input
-        type={`${props.type}`}
-        name={`${props.label.toLowerCase()}`}
+        type={props.type}
+        name={props.name}
         placeholder={props.placeholder}
-        className={styles.input}
+        className={`${styles.input} ${
+          props.errorStyle ? styles.errorStyle : ""
+        }`}
+        style={
+          props.errorStyle
+            ? {
+                outline: "none !important",
+                border: "1px solid red",
+                boxShadow: "0 0 2px red",
+              }
+            : null
+        }
+        ref={props.register}
       />
     </>
   )
@@ -22,9 +34,14 @@ export function CheckboxInput(props) {
       <label htmlFor={`${props.label.toLowerCase()}`}>{props.label}</label>
 
       {props.options.map((option, idx) => (
-        <div className={styles.checkboxArea}>
-          <input type="checkbox" name={option.name} value={option.name} />
-          <label for="vehicle1" className={styles.checkboxArea__label}>
+        <div className={styles.checkboxArea} key={idx}>
+          <input
+            type="checkbox"
+            name={option.name}
+            value={option.name}
+            ref={props.register}
+          />
+          <label htmlFor="vehicle1" className={styles.checkboxArea__label}>
             {option.value}
           </label>
         </div>
@@ -37,8 +54,8 @@ export function SelectInput(props) {
   return (
     <>
       <label htmlFor={`${props.label.toLowerCase()}`}>{props.label}</label>
-      <select className={styles.input}>
-        <option value="Select..." selected="selected" disabled>
+      <select className={styles.input} name={props.name} ref={props.register}>
+        <option defaultValue="Select..." disabled>
           Select...
         </option>
         {props.options.map(option => (

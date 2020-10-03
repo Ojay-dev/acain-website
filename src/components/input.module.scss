@@ -57,3 +57,8 @@
   display: flex;
   flex-direction: column;
 }
+
+.errorStyle:focus{
+    outline: none;
+}
+
