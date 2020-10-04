@@ -38,10 +38,10 @@ export function CheckboxInput(props) {
           <input
             type="checkbox"
             name={option.name}
-            value={option.name}
+            label={option.value}
             ref={props.register}
           />
-          <label htmlFor="vehicle1" className={styles.checkboxArea__label}>
+          <label htmlFor={option.name} className={styles.checkboxArea__label}>
             {option.value}
           </label>
         </div>
@@ -54,10 +54,23 @@ export function SelectInput(props) {
   return (
     <>
       <label htmlFor={`${props.label.toLowerCase()}`}>{props.label}</label>
-      <select className={styles.input} name={props.name} ref={props.register}>
-        <option defaultValue="Select..." disabled>
-          Select...
-        </option>
+      <select
+        className={`${styles.input} ${
+          props.errorStyle ? styles.errorStyle : ""
+        }`}
+        name={props.name}
+        style={
+          props.errorStyle
+            ? {
+                outline: "none !important",
+                border: "1px solid red",
+                boxShadow: "0 0 2px red",
+              }
+            : null
+        }
+        ref={props.register}
+      >
+        <option value="">Select...</option>
         {props.options.map(option => (
           <option value={option.name.toLowerCase()} key={option.code}>
             {option.name}

@@ -5,13 +5,20 @@ import { FormTitle } from "../components/input"
 import { StepOne, StepTwo, StepThree } from "../components/joinFormSteps"
 import styles from "./join.module.scss"
 
-export default function () {
+export default function Join() {
   const [currentStep, setCurrentStep] = useState(1)
-  const { register, errors, handleSubmit } = useForm()
+  const {
+    register,
+    watch,
+    errors,
+    handleSubmit,
+    getValues,
+    trigger,
+  } = useForm({ mode: "onChange" })
 
   const _next = () => {
     // If the current step is 1 or 2, then add one on "next" button click
-    setCurrentStep(currentStep >= 2 ? 3 : currentStep + 1)
+    // setCurrentStep(currentStep >= 2 ? 3 : currentStep + 1)
   }
 
   const _prev = () => {
@@ -24,7 +31,7 @@ export default function () {
       return (
         <button
           className={styles.join__nxtbutton}
-          type="submit"
+          type="button"
           onClick={_prev}
         >
           Previous
@@ -68,6 +75,13 @@ export default function () {
 
   const onSubmit = data => {
     console.log(data)
+    if (!!data.email) {
+      setCurrentStep(2)
+    }
+
+    if (!!data.number) {
+      setCurrentStep(3)
+    }
     // const { email, username, password } = this.state
     // alert(`Your registration detail: \n
     //   Email: ${email} \n
@@ -80,9 +94,25 @@ export default function () {
       <FormTitle title="Become a member" />
 
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-        <StepOne currentStep={currentStep} register={register} errors={errors} />
-        <StepTwo currentStep={currentStep} register={register} errors={errors}/>
-        <StepThree currentStep={currentStep} register={register} errors={errors}/>
+        <StepOne
+          currentStep={currentStep}
+          register={register}
+          watch={watch}
+          errors={errors}
+        />
+        <StepTwo
+          currentStep={currentStep}
+          register={register}
+          errors={errors}
+        />
+        <StepThree
+          currentStep={currentStep}
+          register={register}
+          watch={watch}
+          errors={errors}
+          getValues={getValues}
+          trigger={trigger}
+        />
 
         <div className={styles.join__buttonArea}>
           <Link to="/sign-in" className={styles.join__link}>

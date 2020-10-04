@@ -3,7 +3,7 @@ import { Input, SelectInput, CheckboxInput } from "../components/input"
 import states from "../assets/nigeria-states.json"
 import styles from "./joinFormSteps.module.scss"
 
-export function StepOne({ currentStep, register, errors }) {
+export function StepOne({ currentStep, register, watch, errors }) {
   return (
     <div className={currentStep !== 1 ? styles.none : ""}>
       <div className={styles.form__row}>
@@ -13,12 +13,17 @@ export function StepOne({ currentStep, register, errors }) {
             name="firstname"
             type="text"
             placeholder="First Name"
-            register={register({ required: true })}
+            register={register({
+              required: true,
+              validate: value => {
+                return !!value.trim()
+              },
+            })}
             errorStyle={errors.firstname}
           />
           {errors.firstname && (
             <span role="alert" className={styles.form__error}>
-              First name is required
+              First name is required!
             </span>
           )}
         </div>
@@ -29,14 +34,19 @@ export function StepOne({ currentStep, register, errors }) {
             name="lastname"
             type="text"
             placeholder="Last Name"
-            register={register({ required: true })}
+            register={register({
+              required: true,
+              validate: value => {
+                return !!value.trim()
+              },
+            })}
             errorStyle={errors.lastname}
-            />
-            {errors.lastname && (
-              <span role="alert" className={styles.form__error}>
-                Last name is required
-              </span>
-            )}
+          />
+          {errors.lastname && (
+            <span role="alert" className={styles.form__error}>
+              Last name is required!
+            </span>
+          )}
         </div>
       </div>
 
@@ -46,14 +56,25 @@ export function StepOne({ currentStep, register, errors }) {
           name="email"
           type="email"
           placeholder="abc@xyz.com"
-          register={register({ required: true })}
+          register={register({
+            required: "required",
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "Invalid email address!",
+            },
+          })}
           errorStyle={errors.email}
-          />
-          {errors.email && (
-            <span role="alert" className={styles.form__error}>
-              Email is required
-            </span>
-          )}
+        />
+        {errors.email && errors.email.type === "required" && (
+          <span role="alert" className={styles.form__error}>
+            Email is required!
+          </span>
+        )}
+        {errors.email && errors.email.type === "pattern" && (
+          <span role="alert" className={styles.form__error}>
+            {errors.email.message}
+          </span>
+        )}
       </div>
 
       <div className={styles.form__row}>
@@ -63,14 +84,25 @@ export function StepOne({ currentStep, register, errors }) {
             name="password"
             type="password"
             placeholder="Password"
-            register={register({ required: true })}
+            register={register({
+              required: true,
+              validate: value => {
+                return !!value.trim()
+              },
+              minLength: 8,
+            })}
             errorStyle={errors.password}
-            />
-            {errors.password && (
-              <span role="alert" className={styles.form__error}>
-                Password is required
-              </span>
-            )}
+          />
+          {errors.password && errors.password.type === "required" && (
+            <span role="alert" className={styles.form__error}>
+              Password is required!
+            </span>
+          )}
+          {errors.password && errors.password.type === "minLength" && (
+            <span role="alert" className={styles.form__error}>
+              Password must be atleast 8 characters!
+            </span>
+          )}
         </div>
         <div className={styles.form__input}>
           <Input
@@ -78,21 +110,28 @@ export function StepOne({ currentStep, register, errors }) {
             name="confPassword"
             type="password"
             placeholder="Confirm Password"
-            register={register({ required: true })}
+            register={register({
+              validate: value => value === watch("password"),
+            })}
             errorStyle={errors.confPassword}
-            />
-            {errors.confPassword && (
-              <span role="alert" className={styles.form__error}>
-                You have to verify your password
-              </span>
-            )}
+          />
+          {errors.confPassword && errors.confPassword.type === "validate" && (
+            <span role="alert" className={styles.form__error}>
+              You have to verify the exact password!
+            </span>
+          )}
+          {/* {errors.confPassword && errors.confPassword.type === "minLength" && (
+            <span role="alert" className={styles.form__error}>
+              Password must be atleast 8 characters
+            </span>
+          )} */}
         </div>
       </div>
     </div>
   )
 }
 
-export function StepTwo({ currentStep, register }) {
+export function StepTwo({ currentStep, register, errors }) {
   return (
     <div className={currentStep !== 2 ? styles.none : ""}>
       <div className={styles.form__row}>
@@ -102,8 +141,23 @@ export function StepTwo({ currentStep, register }) {
             name="address"
             type="text"
             placeholder=""
-            register={register}
+            register={
+              currentStep === 2
+                ? register({
+                    required: true,
+                    validate: value => {
+                      return !!value.trim()
+                    },
+                  })
+                : null
+            }
+            errorStyle={errors.address}
           />
+          {errors.address && errors.address.type === "required" && (
+            <span role="alert" className={styles.form__error}>
+              Address is required!
+            </span>
+          )}
         </div>
 
         <div className={styles.form__input}>
@@ -112,19 +166,49 @@ export function StepTwo({ currentStep, register }) {
             name="city"
             type="text"
             placeholder=""
-            register={register}
+            register={
+              currentStep === 2
+                ? register({
+                    required: true,
+                    validate: value => {
+                      return !!value.trim()
+                    },
+                  })
+                : null
+            }
+            errorStyle={errors.city}
           />
+          {errors.city && errors.city.type === "required" && (
+            <span role="alert" className={styles.form__error}>
+              City is required!
+            </span>
+          )}
         </div>
       </div>
 
       <div className={styles.form__row}>
         <div className={styles.form__input}>
           <SelectInput
-            label="State*"
+            label="State of Residence*"
             name="state"
             options={states}
-            register={register}
+            register={
+              currentStep === 2
+                ? register({
+                    required: true,
+                    validate: value => {
+                      return !!value.trim()
+                    },
+                  })
+                : null
+            }
+            errorStyle={errors.state}
           />
+          {errors.state && errors.state.type === "required" && (
+            <span role="alert" className={styles.form__error}>
+              State is required!
+            </span>
+          )}
         </div>
 
         <div className={styles.form__input}>
@@ -144,14 +228,38 @@ export function StepTwo({ currentStep, register }) {
           name="number"
           type="number"
           placeholder="Phone Number"
-          register={register}
+          register={
+            currentStep === 2
+              ? register({
+                  required: true,
+                  validate: value => {
+                    return !!value.trim()
+                  },
+                  pattern: {
+                    value: /^[0-9]{11}/,
+                    message: "Invalid phone number!",
+                  },
+                })
+              : null
+          }
+          errorStyle={errors.number}
         />
+        {errors.number && errors.number.type === "required" && (
+          <span role="alert" className={styles.form__error}>
+            Phone number is required!
+          </span>
+        )}
+        {errors.number && errors.number.type === "pattern" && (
+          <span role="alert" className={styles.form__error}>
+            {errors.number.message}
+          </span>
+        )}
       </div>
     </div>
   )
 }
 
-export function StepThree({ currentStep, register }) {
+export function StepThree({ currentStep, watch, register, errors }) {
   return (
     <div className={currentStep !== 3 ? styles.none : ""}>
       <div className={styles.form__input}>
@@ -162,8 +270,23 @@ export function StepThree({ currentStep, register }) {
             { code: 1, name: "Associate Membership" },
             { code: 2, name: "Full Membership" },
           ]}
-          register={register}
+          register={
+            currentStep === 3
+              ? register({
+                  required: true,
+                  validate: value => {
+                    return !!value.trim()
+                  },
+                })
+              : null
+          }
+          errorStyle={errors.memberType}
         />
+        {errors.memberType && errors.memberType.type === "required" && (
+          <span role="alert" className={styles.form__error}>
+            Select a Membership type!
+          </span>
+        )}
       </div>
 
       <div className={styles.form__input}>
@@ -173,8 +296,20 @@ export function StepThree({ currentStep, register }) {
             { name: "author", value: "An Author" },
             { name: "illustrator", value: "An Illustrator" },
           ]}
-          register={register}
+          register={
+            currentStep === 3
+              ? register({
+                  required: true,
+                })
+              : null
+          }
+          errorStyle={errors.author && errors.illustrator}
         />
+        {errors.author && errors.illustrator && (
+          <span role="alert" className={styles.form__error}>
+            Identify your category (one or more)!
+          </span>
+        )}
       </div>
     </div>
   )
