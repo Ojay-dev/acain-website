@@ -9,7 +9,7 @@ export default function () {
     <Layout>
       <div className={styles.verifyError}>
         <h3 className={styles.verifyError__title}>
-          Oops! looks like something went wrong!!
+          Oops! looks like something went wrong!
         </h3>
         <img
           src={email_error}
