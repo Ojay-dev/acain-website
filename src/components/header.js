@@ -92,9 +92,9 @@ export default () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
+      <Link to="/" className={styles.logo}>
         <img src={logo} alt="logo" />
-      </div>
+      </Link>
 
       <nav className={`${styles.navmenu} ${showMenu ? "" : styles.hide}`}>
         <ul className={styles.navmenu__navlink}>
