@@ -16,10 +16,10 @@ export default function Join() {
     trigger,
   } = useForm({ mode: "onChange" })
 
-  const _next = () => {
-    // If the current step is 1 or 2, then add one on "next" button click
-    // setCurrentStep(currentStep >= 2 ? 3 : currentStep + 1)
-  }
+  // const _next = () => {
+  //   // If the current step is 1 or 2, then add one on "next" button click
+  //   // setCurrentStep(currentStep >= 2 ? 3 : currentStep + 1)
+  // }
 
   const _prev = () => {
     // If the current step is 2 or 3, then subtract one on "previous" button click
