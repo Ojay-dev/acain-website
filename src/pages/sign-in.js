@@ -52,6 +52,10 @@ export default function () {
           />
         </div>
 
+        
+          <Link to="/forgot-password" className={`${styles.login__link} ${styles.login__forgotLink}`}>
+            Forgot password?
+          </Link>
         <span className={styles.login__subtext}>
           Not yet a member?{" "}
           <Link to="/join" className={styles.login__link}>
