@@ -1,8 +1,10 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import { isLoggedIn } from "../services/auth"
 import styles from "./header.module.scss"
 import logo from "../svgs/logo-header.svg"
-// import expand from "../svgs/expand_more.svg"
+import avatar from "../svgs/avatar.svg"
+import expand from "../svgs/expand_more_24px.svg"
 
 const nav = {
   home: { to: "/", text: "Home" },
@@ -110,23 +112,55 @@ export default () => {
         </ul>
       </nav>
 
-      <nav>
-        <ul className={styles.navmenu__authlink}>
-          <li className={styles.navmenu__list}>
-            <Link to="/sign-in" className={styles.navmenu__authenlink}>
-              Sign in
-            </Link>
-          </li>
-          <li className={styles.navmenu__list}>
-            <Link
-              to="/join"
-              className={`${styles.navmenu__authenlink} ${styles.navmenu__join}`}
-            >
-              Join
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      {!isLoggedIn() ? (
+        <div>
+          <ul className={styles.navmenu__authlink}>
+            <li className={styles.navmenu__list}>
+              <Link to="/sign-in" className={styles.navmenu__authenlink}>
+                Sign in
+              </Link>
+            </li>
+            <li className={styles.navmenu__list}>
+              <Link
+                to="/join"
+                className={`${styles.navmenu__authenlink} ${styles.navmenu__join}`}
+              >
+                Join
+              </Link>
+            </li>
+          </ul>
+        </div>
+      ) : (
+        <div className={styles.user}>
+          <div className={styles.imageCropper}>
+            <img src={avatar} alt="avatar" className={styles.user__image} />
+          </div>
+          <span className={styles.user__text}>Welcome Tonye !</span>
+          <span>
+            <img src={expand} alt="" />
+          </span>
+
+          <div className={styles.user__dropdown}>
+            <ul className={styles.droplink}>
+              <li className={styles.droplink__item}>
+                <Link to="#" className={styles.droplink__link}>
+                  Profile
+                </Link>
+              </li>
+              <li className={styles.droplink__item}>
+                <Link to="#" className={styles.droplink__link}>
+                  Books
+                </Link>
+              </li>
+              <li className={styles.droplink__item}>
+                <Link to="#" className={styles.droplink__link}>
+                  Sign out
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      )}
 
       <div
         className={styles.menuBtn}
