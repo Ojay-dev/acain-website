@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styles from "./input.module.scss"
 import logo from "../svgs/logo-header.svg"
 
@@ -96,7 +97,9 @@ export function SubmitInput(props) {
 export function FormTitle(props) {
   return (
     <div className={styles.header}>
-      <img src={logo} alt="logo" />
+      <Link to="/">
+        <img src={logo} alt="logo" />
+      </Link>
       <h2 className={styles.title}>{props.title}</h2>
     </div>
   )
