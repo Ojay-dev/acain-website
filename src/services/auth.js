@@ -10,16 +10,17 @@ export const getUser = () =>
 const setUser = user =>
   window.localStorage.setItem("gatsbyUser", JSON.stringify(user))
 
-export const handleLogin = ({ username, password }) => {
-  if (username === `john` && password === `pass`) {
-    return setUser({
-      username: `john`,
-      name: `Johnny`,
-      email: `johnny@example.org`,
-    })
+export const handleLogin = async loginData => {
+  try {
+    const resp = await axios.post(
+      "http://localhost:4000/api/v1/auth/signin",
+      loginData
+    )
+    const { data } = resp.data
+    return setUser(data)
+  } catch (e) {
+    throw e
   }
-
-  return false
 }
 
 export const handleJoin = async userData => {
@@ -27,14 +28,12 @@ export const handleJoin = async userData => {
     const resp = await axios.post(
       "http://localhost:4000/api/v1/auth/signup",
       userData
-      )
-      
-      const { data } = resp.data
-      
-      return setUser(data)
-    } catch (e) {
-      throw e;
-      }
+    )
+    const { data } = resp.data
+    return setUser(data)
+  } catch (e) {
+    throw e
+  }
 }
 
 export const isLoggedIn = () => {
