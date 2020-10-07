@@ -1,9 +1,26 @@
 import React, { useState } from "react"
+import { navigate } from "gatsby"
+import axios from "axios"
 import { Link } from "gatsby"
 import { useForm } from "react-hook-form"
 import { FormTitle } from "../components/input"
 import { StepOne, StepTwo, StepThree } from "../components/joinFormSteps"
 import styles from "./join.module.scss"
+import { getUniqueUsername } from "../helpers/utils"
+import { handleJoin } from "../services/auth";
+
+// async function createNewUser(userDetails) {
+//   try {
+//     const resp = await axios.post(
+//       "http://localhost:4000/api/v1/auth/signup",
+//       userDetails
+//     )
+
+//     console.log(resp);
+//   } catch (e) {
+//     console.error(e)
+//   }
+// }
 
 export default function Join() {
   const [currentStep, setCurrentStep] = useState(1)
@@ -14,12 +31,7 @@ export default function Join() {
     handleSubmit,
     getValues,
     trigger,
-  } = useForm({ mode: "onChange" })
-
-  // const _next = () => {
-  //   // If the current step is 1 or 2, then add one on "next" button click
-  //   // setCurrentStep(currentStep >= 2 ? 3 : currentStep + 1)
-  // }
+  } = useForm()
 
   const _prev = () => {
     // If the current step is 2 or 3, then subtract one on "previous" button click
@@ -38,7 +50,7 @@ export default function Join() {
         </button>
       )
     }
-    // ...else return nothing
+
     return null
   }
 
@@ -50,7 +62,6 @@ export default function Join() {
             currentStep === 1 ? styles.join__btnMarginRightZero : ""
           } `}
           type="submit"
-          // onClick={_next}
         >
           Next
         </button>
@@ -69,24 +80,44 @@ export default function Join() {
         />
       )
     }
-    // ...else render nothing
+
     return null
   }
 
-  const onSubmit = data => {
+  const onSubmit = async data => {
     console.log(data)
-    if (!!data.email) {
+    if (data.email) {
       setCurrentStep(2)
     }
 
-    if (!!data.number) {
+    if (data.number) {
       setCurrentStep(3)
     }
-    // const { email, username, password } = this.state
-    // alert(`Your registration detail: \n
-    //   Email: ${email} \n
-    //   Username: ${username} \n
-    //   Password: ${password}`)
+
+    if (data.memberType) {
+      var userDetails = {
+        username: getUniqueUsername(data.firstname),
+        password: data.password,
+        firstname: data.firstname,
+        lastname: data.lastname,
+        phone: `+234${data.number.substring(1)}`,
+        address: data.address,
+        city: data.city,
+        state: data.state,
+        membershipType: data.memberType.split(" ").join("_"),
+        email: data.email,
+        profession: {
+          isIllustrator: data.illustrator,
+          isAuthor: data.author,
+        },
+      }
+
+      // console.log()
+
+     await handleJoin(userDetails)
+     navigate(`/app/profile`)
+     
+    }
   }
 
   return (

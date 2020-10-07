@@ -86,23 +86,23 @@ export function StepOne({ currentStep, register, watch, errors }) {
             placeholder="Password"
             register={register({
               required: true,
-              validate: value => {
-                return !!value.trim()
+              pattern: {
+                value: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?.&])[A-Za-z\d@$!%*.#?&]{8,20}$/,
+                message: "Password must be 8-20 characters long, and must contain at least one letter, one number and one special character"
               },
-              minLength: 8,
             })}
             errorStyle={errors.password}
           />
-          {errors.password && errors.password.type === "required" && (
+          {errors.password && errors.password.type === "pattern" && (
             <span role="alert" className={styles.form__error}>
-              Password is required!
+              {errors.password.message}
             </span>
           )}
-          {errors.password && errors.password.type === "minLength" && (
+          {/* {errors.password && errors.password.type === "minLength" && (
             <span role="alert" className={styles.form__error}>
               Password must be atleast 8 characters!
             </span>
-          )}
+          )} */}
         </div>
         <div className={styles.form__input}>
           <Input
@@ -296,14 +296,8 @@ export function StepThree({ currentStep, watch, register, errors }) {
             { name: "author", value: "An Author" },
             { name: "illustrator", value: "An Illustrator" },
           ]}
-          register={
-            currentStep === 3
-              ? register({
-                  required: true,
-                })
-              : null
-          }
-          errorStyle={errors.author && errors.illustrator}
+          register={register}
+          // errorStyle={errors.author && errors.illustrator}
         />
         {errors.author && errors.illustrator && (
           <span role="alert" className={styles.form__error}>
