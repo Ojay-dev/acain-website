@@ -1,29 +1,15 @@
 import React, { useState } from "react"
 import { navigate } from "gatsby"
-import axios from "axios"
 import { Link } from "gatsby"
 import { useForm } from "react-hook-form"
 import { FormTitle } from "../components/input"
 import { StepOne, StepTwo, StepThree } from "../components/joinFormSteps"
 import styles from "./join.module.scss"
-import { getUniqueUsername } from "../helpers/utils"
-import { handleJoin } from "../services/auth";
-
-// async function createNewUser(userDetails) {
-//   try {
-//     const resp = await axios.post(
-//       "http://localhost:4000/api/v1/auth/signup",
-//       userDetails
-//     )
-
-//     console.log(resp);
-//   } catch (e) {
-//     console.error(e)
-//   }
-// }
+import { handleJoin } from "../services/auth"
 
 export default function Join() {
   const [currentStep, setCurrentStep] = useState(1)
+  const [serverSideError, setServerSideError] = useState()
   const {
     register,
     watch,
@@ -85,7 +71,7 @@ export default function Join() {
   }
 
   const onSubmit = async data => {
-    console.log(data)
+    // console.log(data)
     if (data.email) {
       setCurrentStep(2)
     }
@@ -96,7 +82,6 @@ export default function Join() {
 
     if (data.memberType) {
       var userDetails = {
-        username: getUniqueUsername(data.firstname),
         password: data.password,
         firstname: data.firstname,
         lastname: data.lastname,
@@ -112,11 +97,13 @@ export default function Join() {
         },
       }
 
-      // console.log()
-
-     await handleJoin(userDetails)
-     navigate(`/app/profile`)
-     
+      try {
+        await handleJoin(userDetails)
+        navigate(`/`)
+      } catch (e) {
+        console.log(e.response)
+        setServerSideError(e.response.data.message)
+      }
     }
   }
 
@@ -124,6 +111,10 @@ export default function Join() {
     <div className={styles.join}>
       <FormTitle title="Become a member" />
 
+       {serverSideError ? (
+          <span style={{ color: "red" }}>{serverSideError}</span>
+        ) : null}
+        
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <StepOne
           currentStep={currentStep}

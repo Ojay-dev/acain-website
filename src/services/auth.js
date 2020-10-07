@@ -27,20 +27,20 @@ export const handleJoin = async userData => {
     const resp = await axios.post(
       "http://localhost:4000/api/v1/auth/signup",
       userData
-    )
-
-    const { data } = resp.data
-    return setUser(data)
-  } catch (e) {
-    // console.error(e)
-    return false
-  }
+      )
+      
+      const { data } = resp.data
+      
+      return setUser(data)
+    } catch (e) {
+      throw e;
+      }
 }
 
 export const isLoggedIn = () => {
   const user = getUser()
 
-  return !!user.username
+  return !!user.access_token
 }
 
 export const logout = callback => {

@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import { isLoggedIn } from "../services/auth"
+import { isLoggedIn, logout } from "../services/auth"
+import { navigate } from "gatsby"
 import styles from "./header.module.scss"
 import logo from "../svgs/logo-header.svg"
 import avatar from "../svgs/avatar.svg"
@@ -153,7 +154,14 @@ export default () => {
                 </Link>
               </li>
               <li className={styles.droplink__item}>
-                <Link to="#" className={styles.droplink__link}>
+                <Link
+                  to="/"
+                  className={styles.droplink__link}
+                  onClick={event => {
+                    event.preventDefault()
+                    logout(() => navigate(`/sign-in`))
+                  }}
+                >
                   Sign out
                 </Link>
               </li>
