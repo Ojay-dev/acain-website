@@ -1,0 +1,10 @@
+---
+title: "Basirat Razaq-Shuaib"
+position: "Treasurer and Trustee"
+featuredImage: ../../content/board-images/basirat-razaq-shuaib.png
+---
+
+Basirat Razaq-Shuaib is a Board Certified Cognitive Specialist, an author, a social entrepreneur and a global speaker advancing the conversation on disability and inclusive education in Nigeria. She is the Founder of The Winford Centre for Children and Women - a charity supporting children with developmental disabilities in Nigeria, and registered as a United Nations Global Compact partner organisation. She is also the CEO of The Winford Centre International- the premier provider of developmental and learning aids for children with special needs in Nigeria
+Basirat is a doctoral student of disability and inclusive education at the University of Cambridge and she holds multiple degrees and certifications. She has 16 years’ multi-sector experience which cuts across Africa and the UK covering education, financial services and non-profit organisation management industries. Basirat is the first Mansion House Scholar in Nigeria.
+British Council ELTons Innovation Award Finalist, Basirat Razaq-Shuaib is the pioneer of “Inclusion starts with me children series”. She has published two children’s picture books - “I am not naughty- I really really mean it!” and “Dragons can sing” both targeted at educating children, parents and teachers on empathy, kindness and disability inclusion. Her work has been translated into 3 international languages.
+Over the past 4 years, she has continued to actively promote the inclusion of children with developmental disabilities and their families in society so that they have a chance to achieve positive outcomes and contribute positively to economic development. Basirat remains passionate about helping people and strongly believes that through inclusion, we can create a better society and achieve sustainable development. She has worked with leading organisations such as UNESCO, British Council and Guaranty Trust Bank.

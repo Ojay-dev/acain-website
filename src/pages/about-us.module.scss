@@ -1,0 +1,222 @@
+@import "../styles/global";
+
+.we_are {
+  @include margin-width();
+  margin-bottom: 4.25rem;
+  &__title {
+    @include left-dash-title();
+  }
+
+  &__subtitle {
+    font-weight: normal;
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+}
+
+.imageCropper {
+  @include imageCropper($width: 12rem, $height: 12rem);
+}
+
+.image {
+  @include image();
+}
+
+.missionSection {
+  @include margin-width();
+  margin-bottom: 6.5rem !important;
+
+  &__list {
+    padding: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    @include margin-width($width: 70%);
+    margin-bottom: 8.5rem !important;
+  }
+}
+
+.point {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    width: 35%;
+  }
+
+  &__text {
+    margin-top: 1rem;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 1.675rem;
+    line-height: 2.3rem;
+    list-style: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row-reverse;
+    &:nth-child(even) {
+      flex-direction: row;
+    }
+
+    &__text {
+      margin: 0 1rem;
+    }
+  }
+}
+
+.board {
+  @include margin-width();
+  margin-bottom: 6.25rem;
+
+  &__title {
+    @include center-dash-title();
+    margin: 1rem 0 2rem;
+  }
+}
+
+.member {
+  margin-top: 5rem;
+  &:first-child {
+    margin-top: 0;
+  }
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin: 0.625rem 0 0;
+  }
+
+  &__position {
+    font-weight: normal;
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+  }
+
+  &__about {
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    text-align: justify;
+    margin-bottom: 0.5rem;
+  }
+
+  &__morelink {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: #ffb459;
+    text-decoration: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 6.25rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &__detail {
+      width: 30%;
+    }
+
+    &__info {
+      width: 70%;
+    }
+
+    &__about {
+      margin: 0;
+    }
+  }
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffedd7;
+  padding: 6.25rem 5%;
+
+  &__title {
+    font-weight: 600;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    margin: 0 0 1.375rem;
+    text-align: center;
+  }
+}
+
+.newsletterForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__input {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: none;
+    margin-bottom: 0.8rem;
+    &::placeholder {
+      font-weight: normal;
+      font-size: 1rem;
+      line-height: 1.4rem;
+      color: #cccccc;
+    }
+  }
+
+  &__submit {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: #ffffff;
+    background: #ffb459;
+    border-radius: 10px;
+    border: none;
+    padding: 1rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 70%;
+    flex-direction: row;
+    align-items: center;
+
+    &__input {
+      margin-bottom: 0;
+      margin-right: 0.875rem;
+    }
+
+    &__submit {
+      padding: 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 60%;
+  }
+}

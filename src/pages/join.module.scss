@@ -1,0 +1,86 @@
+@import "../styles/global";
+.join {
+  @include margin-width($margin: 3rem auto 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__buttonArea {
+    width: 100%;
+    flex-direction: column-reverse;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    color: #ffb459;
+    text-decoration: none;
+    margin-top: 2rem;
+
+    @media screen and (min-width: 768px) {
+      margin-top: 0;
+    }
+  }
+
+  &__nxtbutton {
+    color: #ffffff;
+    background: #ffb459;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
+    border: 0;
+    padding: 0.625rem 1.875rem;
+
+    // @media screen and (min-width: 768px) {
+      &:first-child {
+        margin-right: 1rem;
+      }
+    // }
+  }
+
+  &__btnMarginRightZero {
+    margin-right: 0 !important;
+  }
+
+  @media screen and (min-width: 768px) {
+    // @include auth-form();
+    position: relative;
+    width: 70%;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    padding: 1rem 5% 2rem;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      width: 100%;
+      border: 1px solid #ffb459;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    &__subtext {
+      text-align: right;
+      // margin: 1rem 0 1.75rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 60%;
+  }
+
+  @media screen and (min-width: 1350px) {
+    width: 50%;
+  }
+}
+
+.form {
+  width: 100%;
+  margin-top: 3.125rem;
+}

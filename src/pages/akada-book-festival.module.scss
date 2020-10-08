@@ -1,0 +1,159 @@
+@import "../styles/global";
+
+.banner {
+  @include margin-width();
+  margin-bottom: 3rem;
+  // margin-bottom: 5.8rem;
+
+  &__image {
+    @include image();
+  }
+
+  @media screen and(min-width: 1024px) {
+    margin-bottom: 5.6rem;
+  }
+}
+
+.countdown {
+  @include margin-width();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+
+  &__title {
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+    text-align: center;
+    margin: 0 0 2rem;
+  }
+
+  &__timersection {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  @media screen and(min-width: 768px) {
+    background: #ffffff;
+    box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.07);
+    border-radius: 73px;
+    padding: 2.6rem 0;
+    margin-bottom: 5.6rem;
+  }
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__value {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    color: #333333;
+    background: #ffedd7;
+    border-radius: 50%;
+  }
+
+  &__subvalue {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    color: #333333;
+    margin-top: 0.5rem;
+  }
+
+  @media screen and(min-width: 1024px) {
+    flex-direction: row;
+    &__value {
+      width: 6.25rem;
+      height: 6.25rem;
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+    }
+
+    &__subvalue {
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+      margin-top: 0;
+      margin-left: 0.8rem;
+    }
+  }
+}
+
+.dateSection {
+  @include margin-width();
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  &__value {
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin: 0 0 0.625rem;
+  }
+
+  &__subtext {
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin: 0;
+  }
+
+  &__note {
+    color: #d13030;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    margin-bottom: 6.25rem;
+
+    &__value {
+      margin: 0;
+    }
+  }
+}
+
+.aboutEvent {
+  @include margin-width();
+  margin-bottom: 4rem;
+
+  &__text {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 212.1%;
+  }
+}
+
+.moreEvent {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6.5rem;
+
+  &__link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffb459;
+    border: 1px solid #ffb459;
+    box-sizing: border-box;
+    padding: 1rem 2.8rem;
+    text-decoration: none;
+  }
+}

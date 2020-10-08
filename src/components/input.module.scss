@@ -1,0 +1,64 @@
+.label {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  padding: 0.94rem 0.75rem;
+  border: 1px solid #999999;
+  box-sizing: border-box;
+  border-radius: 0.3rem;
+  margin-top: .5rem;
+  background-color: #ffffff;
+  &::placeholder {
+    color: #cccccc;
+  }
+}
+
+.checkboxArea {
+  margin-top: 1rem;
+
+  &__label {
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin-left: 1.25rem;
+  }
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+
+  &__input {
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 0.9rem;
+    color: #ffffff;
+    background: #ffb459;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
+    border: none;
+    padding: 0.625rem 1.875rem;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.errorStyle:focus{
+    outline: none;
+}
+

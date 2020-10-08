@@ -1,0 +1,96 @@
+@import "../styles/global";
+
+.contactDetails {
+  @include margin-width($margin: 4.4rem auto);
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.contactinfo {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  margin-bottom: 2rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__text {
+    margin: 0;
+  }
+  &__icon {
+    width: fit-content;
+    margin-bottom: 0.5rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-right: 4rem;
+  }
+}
+
+.form {
+  margin-top: 6rem;
+  &__inputSection {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  &__label {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__input {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: #4f4f4f;
+    padding: 1rem;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+
+    &::placeholder {
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.25rem;
+      color: #cccccc;
+    }
+  }
+
+  &__textarea {
+    height: 30vh;
+  }
+
+  &__submit {
+    width: 100%;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: #ffffff;
+    background: #ffb459;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
+    border: none;
+    padding: 0.625rem 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    &__row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__col {
+      width: 47%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-top: 0;
+    width: 45%;
+  }
+}

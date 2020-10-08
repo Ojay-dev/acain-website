@@ -93,9 +93,29 @@
       color: white !important;
       font-size: 16px !important;
     }
+
+    &__icon {
+      fill: #ffffff !important;
+    }
+
+    &__dropdownContent {
+      position: relative !important;
+      display: block !important;
+      background: none !important;
+      box-shadow: none !important;
+      padding: 1rem 1rem 0 !important;
+    }
+
+    &__dropdownLink {
+      color: #ffffff !important;
+    }
   }
 
   .hide {
     transform: translate(-200%);
+  }
+
+  .none {
+    display: none !important;
   }
 }

@@ -26,11 +26,13 @@
     }
   }
 
+  &__list,
   &__item {
     margin-right: 2.4rem;
     list-style: none;
   }
 
+  &__list:last-child,
   &__item:last-child {
     margin-right: 0;
   }
@@ -46,7 +48,52 @@
     position: relative;
   }
 
-  
+  &__icon {
+    fill: #000000;
+  }
+
+  &__dropdownContent {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background: #ffffff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
+    padding: 1.25rem 1.375rem;
+    border-top: 2px solid #ffb459;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &__dropdownLink {
+    position: relative;
+    display: flex;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: #4f4f4f;
+    text-decoration: none;
+    margin-bottom: 1.375rem;
+    padding-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      width: 0%;
+      border-bottom: 2px solid #ffb459;
+      transition: width 300ms ease-in-out;
+    }
+    &:hover::before {
+      width: 100%;
+    }
+  }
+
+  &__item:hover > &__dropdownContent {
+    display: flex;
+  }
 
   &__hover:not(.active) {
     &::before {
@@ -71,5 +118,74 @@
 }
 
 .active {
-  border-bottom: 2px solid #FFB459;
+  border-bottom: 2px solid #ffb459;
+}
+
+.user {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__text {
+    margin: 0 0.375rem 0 1.25rem;
+  }
+
+  &__dropdown {
+    position: absolute;
+    display: none;
+    top: 2.5rem;
+    left: 3.8rem;
+    width: 55%;
+    flex-direction: column;
+    background: #ffffff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
+    padding: 1rem 1.375rem;
+    border-top: 2px solid #ffb459;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover > &__dropdown {
+    display: block;
+  }
+}
+.droplink {
+  padding: 0;
+  &__item {
+    position: relative;
+    list-style: none;
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.875rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      border-bottom: 2px solid #ffb459;
+      width: 0%;
+      transition: width 300ms ease-in-out;
+    }
+    &:hover::before {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    text-decoration: none;
+    color: #4f4f4f;
+  }
+}
+
+.imageCropper {
+  @include imageCropper($width: 3.125rem, $height: 3.125rem);
 }
