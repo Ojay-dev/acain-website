@@ -98,11 +98,6 @@ export function StepOne({ currentStep, register, watch, errors }) {
               {errors.password.message}
             </span>
           )}
-          {/* {errors.password && errors.password.type === "minLength" && (
-            <span role="alert" className={styles.form__error}>
-              Password must be atleast 8 characters!
-            </span>
-          )} */}
         </div>
         <div className={styles.form__input}>
           <Input
