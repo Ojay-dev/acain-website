@@ -69,7 +69,7 @@ code {
 @mixin imageCropper($width: 80px, $height: 80px) {
   display: inline-block;
   border-radius: 50%;
-  border: 1px solid #f2f2f2;
+  // border: 1px solid #f2f2f2;
   overflow: hidden;
   width: $width;
   height: $height;
