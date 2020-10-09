@@ -1,18 +1,12 @@
-@import "../styles/config";
-
-.menu-btn {
-  position: absolute;
-  right: 0;
+.menuBtn {
+  position: relative;
+  z-index: 1;
   height: 20px;
   width: 28px;
   cursor: pointer;
-
-  &:focus {
-    outline: none;
-  }
-
-  @media screen and(min-width: 1140px) {
-    display: none;
+  @include transition-ease;
+  @media screen and (min-width: 1200px) {
+    display:none;
   }
 
   &__burger {
@@ -21,7 +15,7 @@
     top: 0.5rem;
     width: 28px;
     height: 3px;
-    background: #ffb459;
+    background-color: #ffb459;
     @include transition-ease;
 
     &::before {
@@ -30,8 +24,7 @@
       top: -8px;
       width: 28px;
       height: 3px;
-      background: #ffb459;
-      @include transition-ease;
+      background-color: #ffb459;
     }
 
     &::after {
@@ -40,12 +33,10 @@
       top: 8px;
       width: 20px;
       height: 3px;
-      background: #ffb459;
-      @include transition-ease;
+      background-color: #ffb459;
     }
-
-    &__open {
-      transform: rotate(360deg);
+    &.open {
+      transform: rotate(180deg);
       background: transparent;
 
       &::before {
@@ -60,62 +51,115 @@
   }
 }
 
-@media screen and (max-width: 1140px) {
-  .navmenu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80%;
-    height: 100vh;
-    background: #ffb459;
-    padding-top: 20vh !important;
-    @include transition-ease;
-    transition: all 800ms ease-in-out;
-    z-index: 4;
+.navMobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffb459;
+  width: 80vw;
+  height: 100vh;
+  // padding: 33px;
+  opacity: 0.98;
+  visibility: hidden;
+  transform: translateX(-100%);
+  @include transition-ease;
 
-    &__navlink {
-      // display: none;
-      width: 100%;
-      flex-direction: column;
+  @media screen and (min-width: 768px) {
+    display:none;
+  }
+  &.open {
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  & > .loggedInUserDetail {
+    width: 80%;
+    margin: 61px auto 40px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+
+    & .imageCropper {
+      @include imageCropper($width: 3.125rem, $height: 3.125rem);
+      // border: 2px solid #fff;
+    }
+
+    & .nameSection {
+      display: flex;
       align-items: center;
     }
 
-    &__authlink {
-      margin-right: 7rem !important;
+    & .text {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: white;
+      margin: 9px 6px 4px 0;
     }
-
-    &__item {
-      margin-right: 0 !important;
-      padding: 0.8rem 0 !important;
+    & .subtext {
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 12px;
+      color: white;
     }
-
-    &__link {
-      color: white !important;
-      font-size: 16px !important;
-    }
-
-    &__icon {
-      fill: #ffffff !important;
-    }
-
-    &__dropdownContent {
-      position: relative !important;
-      display: block !important;
-      background: none !important;
-      box-shadow: none !important;
-      padding: 1rem 1rem 0 !important;
-    }
-
-    &__dropdownLink {
-      color: #ffffff !important;
+    & .status {
+      font-weight: bold;
     }
   }
 
-  .hide {
-    transform: translate(-200%);
+  & > .menuNav {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column wrap;
+    overflow: hidden;
+    list-style-type: none;
+    padding-left: 18px;
+    & .item {
+      margin-bottom: 35px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    & .link {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: #ffffff;
+      text-decoration: none;
+    }
   }
 
-  .none {
-    display: none !important;
+  & > .authLink {
+    width: 80%;
+    margin: 50px auto 20px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .signin,
+  & .join {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  & .join {
+    display: flex;
+    align-items: center;
+    color: #FFB459;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
+    padding: 0 30px;
+    height: 35px;
+    margin-top: 23px;
   }
 }

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import axios from "axios"
+import { navigate } from "gatsby"
 
 async function verifyCode(code) {
   try {
@@ -8,17 +9,17 @@ async function verifyCode(code) {
     )
 
     if (resp.status === 200) {
-      window.location = "/email-verification-successful/"
+      navigate("/email-verification-successful/")
     }
   } catch (error) {
     console.log(error)
-    window.location = "/email-verification-error/"
+    navigate("/email-verification-error/")
   }
 }
 
 export default function ({ location }) {
   useEffect(() => {
-    let params = new URLSearchParams(location.search.substring(1))
+    const params = new URLSearchParams(location.search.substring(1))
     const code = params.get("code")
     // console.log(code)
     verifyCode(code)
