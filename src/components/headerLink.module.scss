@@ -1,20 +1,76 @@
 .navDesktop {
+  position: relative;
+  margin-right: 38px;
+  &:last-child {
+    margin-right: 0;
+  }
   &__item {
-    position: relative;
     list-style-type: none;
-    margin-right: 38px;
-    padding: 8px 0;
-    &:last-child {
-      margin-right: 0;
-    }
-
-    // &:hover {
-    //   padding-bottom: 6px;
-    //   border-bottom: 2px solid #ffb459;
-    // }
   }
 
   &__hover:not(.active) {
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      width: 0%;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #ffb459;
+      transition: width 300ms ease-in-out;
+    }
+    &:hover::before {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration: none;
+    padding: 8px 0;
+    color: #000000;
+  }
+
+  &__icon {
+    fill: #000000;
+  }
+
+  &__dropdownContent {
+    position: absolute;
+    top: 28px;
+    display: none;
+    flex-direction: column;
+    background: #ffffff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
+    padding: 1.25rem 1.375rem;
+    border-top: 2px solid #ffb459;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover  &__dropdownContent {
+    display: block;
+  }
+
+  &__dropdownLink {
+    width: 110px;
+    position: relative;
+    display: flex;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: #4f4f4f;
+    text-decoration: none;
+    margin-bottom: 1.375rem;
+    padding-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     &::before {
       position: absolute;
       content: "";
@@ -27,17 +83,9 @@
       width: 100%;
     }
   }
-
-  &__link {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
-    text-decoration: none;
-    color: #000000;
-  }
 }
 
 .active {
-  padding-bottom: 6px;
+  // padding-bottom: 6px;
   border-bottom: 2px solid #ffb459;
 }

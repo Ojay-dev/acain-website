@@ -47,50 +47,53 @@ export default function () {
         </ul>
       </nav>
 
-      {/* <div className={styles.authLink}>
-        <Link to="/sign-in" className={styles.authLink__signin}>
-          Sign in
-        </Link>
-        <Link to="/join" className={styles.authLink__join}>
-          Join
-        </Link>
-      </div> */}
-      <div className={styles.user}>
-        <div className={styles.imageCropper}>
-          <img src={avatar} alt="avatar" className={styles.user__image} />
+      {!isLoggedIn() ? (
+        <div className={styles.authLink}>
+          <Link to="/sign-in" className={styles.authLink__signin}>
+            Sign in
+          </Link>
+          <Link to="/join" className={styles.authLink__join}>
+            Join
+          </Link>
         </div>
-        <span className={styles.user__text}>Welcome Tonye !</span>
-        <span>
-          <img src={expand} alt="" />
-        </span>
+      ) : (
+        <div className={styles.user}>
+          <div className={styles.imageCropper}>
+            <img src={avatar} alt="avatar" className={styles.user__image} />
+          </div>
+          <span className={styles.user__text}>Welcome Tonye !</span>
+          <span>
+            <img src={expand} alt="" />
+          </span>
 
-        <div className={styles.user__dropdown}>
-          <ul className={styles.droplink}>
-            <li className={styles.droplink__item}>
-              <Link to="#" className={styles.droplink__link}>
-                Profile
-              </Link>
-            </li>
-            <li className={styles.droplink__item}>
-              <Link to="#" className={styles.droplink__link}>
-                Books
-              </Link>
-            </li>
-            <li className={styles.droplink__item}>
-              <Link
-                to="/"
-                className={styles.droplink__link}
-                onClick={event => {
-                  event.preventDefault()
-                  logout(() => navigate(`/sign-in`))
-                }}
-              >
-                Sign out
-              </Link>
-            </li>
-          </ul>
+          <div className={styles.user__dropdown}>
+            <ul className={styles.droplink}>
+              <li className={styles.droplink__item}>
+                <Link to="#" className={styles.droplink__link}>
+                  Profile
+                </Link>
+              </li>
+              <li className={styles.droplink__item}>
+                <Link to="#" className={styles.droplink__link}>
+                  Books
+                </Link>
+              </li>
+              <li className={styles.droplink__item}>
+                <Link
+                  to="/"
+                  className={styles.droplink__link}
+                  onClick={event => {
+                    event.preventDefault()
+                    logout(() => navigate(`/sign-in`))
+                  }}
+                >
+                  Sign out
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+      )}
 
       <MobileMenu />
     </header>

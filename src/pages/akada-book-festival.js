@@ -88,12 +88,6 @@ export default function () {
           for children and insightful sessions for parents and teachers.
         </p>
       </div>
-
-      <div className={styles.moreEvent}>
-        <Link to="/" className={styles.moreEvent__link}>
-          see other
-        </Link>
-      </div>
     </Layout>
   )
 }

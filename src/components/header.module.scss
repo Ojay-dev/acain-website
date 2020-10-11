@@ -69,9 +69,12 @@
 
 .user {
   position: relative;
-  display: flex;
+  display: none;
   align-items: center;
   cursor: pointer;
+  @media screen and (min-width: 1200px) {
+    display: flex;
+  }
 
   &__image {
     width: 100%;
