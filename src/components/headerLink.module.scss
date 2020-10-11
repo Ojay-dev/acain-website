@@ -1,0 +1,43 @@
+.navDesktop {
+  &__item {
+    position: relative;
+    list-style-type: none;
+    margin-right: 38px;
+    padding: 8px 0;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    // &:hover {
+    //   padding-bottom: 6px;
+    //   border-bottom: 2px solid #ffb459;
+    // }
+  }
+
+  &__hover:not(.active) {
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      width: 0%;
+      border-bottom: 2px solid #ffb459;
+      transition: width 300ms ease-in-out;
+    }
+    &:hover::before {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration: none;
+    color: #000000;
+  }
+}
+
+.active {
+  padding-bottom: 6px;
+  border-bottom: 2px solid #ffb459;
+}
