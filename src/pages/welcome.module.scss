@@ -1,0 +1,73 @@
+@import "../styles/global";
+
+.welcome {
+  @include margin-width($margin: 5rem auto 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__text {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 35px;
+    text-align: center;
+    margin: 0 0 18px 0;
+  }
+
+  &__subtext {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    margin: 0 0 5.625rem;
+  }
+
+  &__image {
+    width: 15.6rem;
+  }
+
+  &__paymentLink {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-top: 5rem;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    background: #ffb459;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
+    padding: 0 30px;
+  }
+
+  &__backLink {
+    margin-top: 1.5rem;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #ffb459;
+  }
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    margin-top: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &__text {
+      font-size: 35px;
+      line-height: 42px;
+    }
+
+    &__subtext {
+      width: 800px;
+      font-size: 22px;
+      line-height: 27px;
+    }
+
+    &__image {
+      width: 22rem;
+    }
+  }
+}
