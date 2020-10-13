@@ -16,7 +16,7 @@ export default function () {
 
     try {
       const resp = await axios.post(
-        "http://localhost:4000/api/v1/auth/forgot-password",
+        "https://acain.herokuapp.com/api/v1/auth/forgot-password",
         {
           type: "email",
           email: data.email,

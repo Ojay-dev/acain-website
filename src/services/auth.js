@@ -13,7 +13,7 @@ const setUser = user =>
 export const handleLogin = async loginData => {
   try {
     const resp = await axios.post(
-      "http://localhost:4000/api/v1/auth/signin",
+      "https://acain.herokuapp.com/api/v1/auth/signin",
       loginData
     )
     const { data } = resp.data
@@ -26,7 +26,7 @@ export const handleLogin = async loginData => {
 export const handleJoin = async userData => {
   try {
     const resp = await axios.post(
-      "http://localhost:4000/api/v1/auth/signup",
+      "https://acain.herokuapp.com/api/v1/auth/signup",
       userData
     )
     const { data } = resp.data

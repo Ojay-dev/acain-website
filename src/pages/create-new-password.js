@@ -21,7 +21,7 @@ export default function ({ location }) {
 
     try {
       const resp = await axios.put(
-        `http://localhost:4000/api/v1/auth//forgot-password?code=${code}`,
+        `https://acain.herokuapp.com/api/v1/auth//forgot-password?code=${code}`,
         data
       )
 

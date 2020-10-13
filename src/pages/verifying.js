@@ -5,7 +5,7 @@ import { navigate } from "gatsby"
 async function verifyCode(code) {
   try {
     const resp = await axios.put(
-      `http://localhost:4000/api/v1/auth/verify-email?code=${code}`
+      `https://acain.herokuapp.com/api/v1/auth/verify-email?code=${code}`
     )
 
     if (resp.status === 200) {
