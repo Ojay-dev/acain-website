@@ -97,9 +97,11 @@ export default function Join() {
         },
       }
 
+      console.log(userDetails)
+
       try {
         await handleJoin(userDetails)
-        navigate(`/`)
+        navigate(`/welcome`)
       } catch (e) {
         console.log(e.response)
         setServerSideError(e.response.data.message)
@@ -111,10 +113,10 @@ export default function Join() {
     <div className={styles.join}>
       <FormTitle title="Become a member" />
 
-       {serverSideError ? (
-          <span style={{ color: "red" }}>{serverSideError}</span>
-        ) : null}
-        
+      {serverSideError ? (
+        <span style={{ color: "red" }}>{serverSideError}</span>
+      ) : null}
+
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <StepOne
           currentStep={currentStep}
