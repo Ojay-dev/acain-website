@@ -41,6 +41,10 @@
       &:first-child {
         margin-right: 1rem;
       }
+
+      &:disabled {
+        background-color: gray;
+      }
     // }
   }
 

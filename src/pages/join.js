@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { navigate } from "gatsby"
 import { Link } from "gatsby"
 import { useForm } from "react-hook-form"
+import Loader from "../components/loader"
 import { FormTitle } from "../components/input"
 import { StepOne, StepTwo, StepThree } from "../components/joinFormSteps"
 import styles from "./join.module.scss"
@@ -10,6 +11,7 @@ import { handleJoin } from "../services/auth"
 export default function Join() {
   const [currentStep, setCurrentStep] = useState(1)
   const [serverSideError, setServerSideError] = useState()
+  const [loading, setLoading] = useState(false)
   const {
     register,
     watch,
@@ -31,6 +33,7 @@ export default function Join() {
           className={styles.join__nxtbutton}
           type="button"
           onClick={_prev}
+          disabled={loading}
         >
           Previous
         </button>
@@ -62,7 +65,8 @@ export default function Join() {
           } `}
           type="submit"
           name="submit"
-          value="Join Now"
+          value={loading ? "Joining..." : "Join Now"}
+          disabled={loading}
         />
       )
     }
@@ -100,14 +104,22 @@ export default function Join() {
       console.log(userDetails)
 
       try {
-        await handleJoin(userDetails)
-        navigate(`/welcome`)
+        setLoading(true)
+        await setTimeout(async () => {
+          await handleJoin(userDetails)
+        }, 5000)
+        // navigate(`/welcome`)
       } catch (e) {
         console.log(e.response)
         setServerSideError(e.response.data.message)
+        setLoading(false)
       }
     }
   }
+
+  // if (loading) {
+  //   return <Loader />
+  // }
 
   return (
     <div className={styles.join}>

@@ -1,12 +1,14 @@
 .menuBtn {
-  position: relative;
+  position: absolute;
   z-index: 1;
+  top: 2.5rem;
+  right: 0;
   height: 20px;
   width: 28px;
   cursor: pointer;
   @include transition-ease;
   @media screen and (min-width: 1200px) {
-    display:none;
+    display: none;
   }
 
   &__burger {
@@ -58,56 +60,20 @@
   background-color: #ffb459;
   width: 80vw;
   height: 100vh;
+  z-index: 1;
   // padding: 33px;
   opacity: 0.98;
   visibility: hidden;
+  overflow: auto;
   transform: translateX(-100%);
   @include transition-ease;
 
-  @media screen and (min-width: 768px) {
-    display:none;
+  @media screen and (min-width: 1200px) {
+    display: none;
   }
   &.open {
     visibility: visible;
     transform: translateX(0);
-  }
-
-  & > .loggedInUserDetail {
-    width: 80%;
-    margin: 61px auto 40px;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #fff;
-
-    & .imageCropper {
-      @include imageCropper($width: 3.125rem, $height: 3.125rem);
-      // border: 2px solid #fff;
-    }
-
-    & .nameSection {
-      display: flex;
-      align-items: center;
-    }
-
-    & .text {
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 20px;
-      color: white;
-      margin: 9px 6px 4px 0;
-    }
-    & .subtext {
-      font-weight: 500;
-      font-size: 10px;
-      line-height: 12px;
-      color: white;
-    }
-    & .status {
-      font-weight: bold;
-    }
   }
 
   & > .menuNav {
@@ -119,15 +85,17 @@
     list-style-type: none;
     padding-left: 18px;
     & .item {
-      margin-bottom: 35px;
+      margin-bottom: 33px;
       &:last-child {
         margin-bottom: 0;
       }
     }
 
     & .link {
+      display: flex;
+      align-items: center;
       font-weight: 500;
-      font-size: 16px;
+      font-size: 14px;
       line-height: 20px;
       color: #ffffff;
       text-decoration: none;
@@ -136,7 +104,7 @@
 
   & > .authLink {
     width: 80%;
-    margin: 50px auto 20px;
+    margin: 30px auto 20px;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -146,7 +114,7 @@
   & .signin,
   & .join {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     color: #ffffff;
     text-decoration: none;
@@ -155,11 +123,11 @@
   & .join {
     display: flex;
     align-items: center;
-    color: #FFB459;
+    color: #ffb459;
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
     padding: 0 30px;
     height: 35px;
-    margin-top: 23px;
+    margin-top: 25px;
   }
 }
