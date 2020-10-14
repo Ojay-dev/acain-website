@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Title from "../components/page-title"
 import styles from "./types-of-membership.module.scss"
@@ -168,6 +169,9 @@ export default function () {
             </ul>
           </div>
         </ol>
+        <Link to="/join" className={styles.membershipType__link}>
+          Become a Member
+        </Link>
       </div>
     </Layout>
   )

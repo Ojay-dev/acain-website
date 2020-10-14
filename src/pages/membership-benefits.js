@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Title from "../components/page-title"
 import styles from "./membership-benefits.module.scss"
@@ -30,7 +31,9 @@ export default function () {
               </p>
               <ul>
                 <div>
-                  <li className={styles.benefits__list}>Creative skills enhancement</li>
+                  <li className={styles.benefits__list}>
+                    Creative skills enhancement
+                  </li>
                   <p className={styles.benefits__text}>
                     ACAIN members gain valuable technical skills to help them
                     improve their craft.
@@ -38,7 +41,9 @@ export default function () {
                 </div>
 
                 <div>
-                  <li className={styles.benefits__list}>Entrepreneurial skills enhancement</li>
+                  <li className={styles.benefits__list}>
+                    Entrepreneurial skills enhancement
+                  </li>
                   <p className={styles.benefits__text}>
                     ACAIN members can acquire basic entrepreneurial skills and
                     knowledge to monetize their craft and make it financially
@@ -118,6 +123,10 @@ export default function () {
             </li>
           </ul>
         </div>
+
+        <Link to="/join" className={styles.benefits__link}>
+          Become a Member
+        </Link>
       </div>
     </Layout>
   )
