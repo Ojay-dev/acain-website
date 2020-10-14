@@ -18,9 +18,8 @@ function HeaderLink({ navItem }) {
               width="10"
               height="10"
               viewBox="0 0 10 10"
-              // fill="none"
-              className={styles.navmenu__icon}
               xmlns="http://www.w3.org/2000/svg"
+              style={{ marginLeft: 2 }}
             >
               <path d="M6.9125 3.4563L5 5.36463L3.0875 3.4563L2.5 4.0438L5 6.5438L7.5 4.0438L6.9125 3.4563Z" />
             </svg>
@@ -31,13 +30,13 @@ function HeaderLink({ navItem }) {
         <div className={styles.navDesktop__dropdownContent}>
           {navItem.dropdownMenu.map((submenu, idx) => {
             return (
-              <a
-                href={`/${submenu.toLowerCase().split(" ").join("-")}`}
+              <Link
+                to={`/${submenu.toLowerCase().split(" ").join("-")}`}
                 className={styles.navDesktop__dropdownLink}
                 key={idx}
               >
                 {submenu}
-              </a>
+              </Link>
             )
           })}
         </div>

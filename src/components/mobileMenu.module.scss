@@ -1,3 +1,60 @@
 @import "../styles/global";
 @import "../styles/config";
 @import "../styles/menu";
+
+.loggedInUserDetail {
+  width: 80%;
+  margin: 61px auto 40px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fff;
+
+  &__imageCropper {
+    @include imageCropper($width: 3.125rem, $height: 3.125rem);
+    // border: 2px solid #fff;
+  }
+
+  &__nameSection {
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: white;
+    margin: 9px 6px 4px 0;
+  }
+  &__subtext {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: white;
+  }
+  &__status {
+    font-weight: bold;
+  }
+}
+
+.dropdownContent {
+  display: flex;
+  flex-direction: column;
+
+  &__dropdownLink {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    padding-left: .5rem;
+    margin: 1.2rem 0 0;
+  }
+}
+
+.dnone {
+  display: none;
+}

@@ -26,7 +26,7 @@ const nav = {
     dropdownMenu: ["Members directory", "Professional directory"],
   },
   "News-&-Events": {
-    to: "/akada-book-festival",
+    to: "#",
     text: "News & Events",
     dropdown: true,
     dropdownMenu: ["Ake Festival", "Akada Book Festival", "Gallery"],
@@ -95,7 +95,7 @@ export default function () {
         </div>
       )}
 
-      <MobileMenu />
+      <MobileMenu navItems={Object.values(nav)} />
     </header>
   )
 }
