@@ -1,6 +1,7 @@
 ---
 title: "Olubunmi Aboderin Talabi"
 position: "Chairman and Trustee"
+rank: 1
 featuredImage: ../../content/board-images/olubunmi-aboderin-talabi.png
 ---
 

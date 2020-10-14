@@ -1,6 +1,7 @@
 ---
 title: "Chioma Momah"
 position: "Vice Chairman and Trustee"
+rank: 2
 featuredImage: ../../content/board-images/chioma-momah.png
 ---
 

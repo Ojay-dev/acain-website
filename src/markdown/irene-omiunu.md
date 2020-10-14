@@ -1,6 +1,7 @@
 ---
 title: "Irene Omiunu"
 position: "Trustee"
+rank: 7
 featuredImage: ../../content/board-images/irene-omiunu.png
 ---
 

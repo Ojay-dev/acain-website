@@ -1,6 +1,7 @@
 ---
 title: "Basirat Razaq-Shuaib"
 position: "Treasurer and Trustee"
+rank: 3
 featuredImage: ../../content/board-images/basirat-razaq-shuaib.png
 ---
 

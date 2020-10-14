@@ -1,6 +1,7 @@
 ---
 title: "Tonye Faloughi-Ekezie"
 position: "Secretary and Trustee"
+rank: 4
 featuredImage: ../../content/board-images/tonye-faloughi-ekezie.png
 ---
 

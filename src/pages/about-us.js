@@ -107,16 +107,21 @@ export default function ({ data }) {
 
       <div className={styles.board}>
         <h3 className={styles.board__title}>Our Board members</h3>
-        {post.edges.map(({ node }, idx) => (
-          <Member
-            key={node.id}
-            image={node.frontmatter.featuredImage.childImageSharp.fluid}
-            name={node.frontmatter.title}
-            position={node.frontmatter.position}
-            info={node.excerpt}
-            link={node.fields.slug}
-          />
-        ))}
+        {post.edges
+          .sort((x, y) => x.node.frontmatter.rank - y.node.frontmatter.rank)
+          .map(({ node }) => {
+            console.log(node.frontmatter.rank)
+            return (
+              <Member
+                key={node.id}
+                image={node.frontmatter.featuredImage.childImageSharp.fluid}
+                name={node.frontmatter.title}
+                position={node.frontmatter.position}
+                info={node.excerpt}
+                link={node.fields.slug}
+              />
+            )
+          })}
       </div>
 
       <div className={styles.newsletter}>
@@ -152,6 +157,7 @@ export const query = graphql`
           frontmatter {
             position
             title
+            rank
             featuredImage {
               childImageSharp {
                 fluid {
