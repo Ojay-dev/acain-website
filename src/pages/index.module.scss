@@ -201,22 +201,28 @@
     @include left-dash-title();
   }
 
+  &__article {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    align-items: center;
     &__textSection {
-      width: 60%;
+      width: 70%;
       margin-right: 1rem;
     }
 
     &__imageSection {
-      width: 40%;
+      // width: 40%;
       display: flex;
       justify-content: flex-end;
     }
 
     &__link {
       text-align: left;
-      margin-top: 6.25rem;
+      margin-top: 4.25rem;
     }
   }
 }

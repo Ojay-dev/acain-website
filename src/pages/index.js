@@ -35,10 +35,10 @@ function Hero() {
           book authors and illustrators in Nigeria.
         </p>
         <div className={styles.herolink}>
-          <Link to="/" className={styles.herolink__join}>
+          <Link to="/types-of-membership" className={styles.herolink__join}>
             Join Us now
           </Link>
-          <Link to="/" className={styles.herolink__find}>
+          <Link to="/about-us" className={styles.herolink__find}>
             Find out more
           </Link>
         </div>
@@ -114,15 +114,9 @@ function About() {
       >
         <h3 className={styles.about__title}>Who We Are</h3>
         <article className={styles.about__article}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat eget
-          odio lobortis ut tortor. Arcu porttitor bibendum lobortis molestie sit
-          natoque scelerisque. Ultrices fermentum sapien nulla in velit et
-          sapien. <br />
-          <br /> Nunc faucibus consequat donec dictum eu neque dui faucibus.
-          Urna nunc arcu ante id nisi mi luctus. Auctor porta amet, amet,
-          gravida. Sit proin aliquam auctor cras tincidunt consectetur. Sit
-          felis mi sagittis tortor felis in enim, pellentesque lacus. Congue mi
-          lobortis adipiscing pellentesque in sagittis eget sit.
+          ACAIN exists to answer the questions “Where can I find the support I
+          need to improve my creativity as a children’s book author, illustrator
+          and editor as well as thrive from it?”
         </article>
 
         <div className={styles.about__link}>
@@ -260,11 +254,11 @@ export default function () {
 
         <div className={styles.book}>
           <div
-            // className={styles.book__item}
-            // data-aos="fade-up"
-            // data-aos-delay="50"
-            // data-aos-duration="1000"
-            // data-aos-anchor-placement="bottom-center"
+          // className={styles.book__item}
+          // data-aos="fade-up"
+          // data-aos-delay="50"
+          // data-aos-duration="1000"
+          // data-aos-anchor-placement="bottom-center"
           >
             <img src={book1} alt="Power Cut book" className={styles.image} />
             <div className={styles.book__title}>Power Cut</div>
