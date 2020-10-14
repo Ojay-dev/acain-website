@@ -85,7 +85,7 @@
     list-style-type: none;
     padding-left: 18px;
     & .item {
-      margin-bottom: 33px;
+      margin-bottom: 40px;
       &:last-child {
         margin-bottom: 0;
       }
@@ -95,8 +95,8 @@
       display: flex;
       align-items: center;
       font-weight: 500;
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 16px;
+      line-height: 21px;
       color: #ffffff;
       text-decoration: none;
     }
@@ -104,7 +104,7 @@
 
   & > .authLink {
     width: 80%;
-    margin: 30px auto 20px;
+    margin: 70px auto 50px;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -114,7 +114,7 @@
   & .signin,
   & .join {
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 20px;
     color: #ffffff;
     text-decoration: none;
@@ -128,6 +128,6 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
     padding: 0 30px;
     height: 35px;
-    margin-top: 25px;
+    margin-top: 32px;
   }
 }
