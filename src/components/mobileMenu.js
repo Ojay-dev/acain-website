@@ -62,9 +62,13 @@ export default function ({ navItems }) {
           style={!isLoggedIn() ? { marginTop: "8rem" } : null}
         >
           {navItems.map((navItem, idx) => (
-            <div className={styles.item}>
-              <li key={idx} >
-                <Link to={navItem.to} className={styles.link} onClick={toggleSubMenu}>
+            <div className={styles.item} key={idx}>
+              <li>
+                <Link
+                  to={navItem.to}
+                  className={styles.link}
+                  onClick={toggleSubMenu}
+                >
                   {navItem.text}{" "}
                   {navItem.dropdown ? (
                     <svg
@@ -104,11 +108,14 @@ export default function ({ navItems }) {
           ))}
         </ul>
 
-        <div className={styles.authLink}>
+        <div
+          className={styles.authLink}
+          style={isLoggedIn() ? { marginTop: 30 } : null}
+        >
           {isLoggedIn() ? (
             <Link
               to="/"
-              className={styles.signin}
+              className={styles.join}
               onClick={event => {
                 event.preventDefault()
                 logout(() => navigate(`/sign-in`))
