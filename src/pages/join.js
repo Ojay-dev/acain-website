@@ -108,7 +108,7 @@ export default function Join() {
         await setTimeout(async () => {
           await handleJoin(userDetails)
         }, 5000)
-        // navigate(`/welcome`)
+        navigate(`/welcome`)
       } catch (e) {
         console.log(e.response)
         setServerSideError(e.response.data.message)
@@ -117,9 +117,9 @@ export default function Join() {
     }
   }
 
-  // if (loading) {
-  //   return <Loader />
-  // }
+  if (loading) {
+    return <Loader />
+  }
 
   return (
     <div className={styles.join}>
