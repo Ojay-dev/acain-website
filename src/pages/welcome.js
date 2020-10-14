@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import axios from "axios"
 import { Link, navigate } from "gatsby"
 import Loader from "../components/loader"
@@ -8,9 +8,6 @@ import payment from "../svgs/payment.svg"
 
 export default function () {
   const [loading, setLoading] = useState(false)
-  useEffect(() => {
-    console.log(getUser())
-  })
 
   const proceedWithPayment = async () => {
     // console.log(getUser().membershipType)
