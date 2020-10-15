@@ -75,7 +75,6 @@ export default function Join() {
   }
 
   const onSubmit = async data => {
-    // console.log(data)
     if (data.email) {
       setCurrentStep(2)
     }
@@ -101,7 +100,6 @@ export default function Join() {
         },
       }
 
-      console.log(userDetails)
 
       try {
         setLoading(true)
@@ -110,7 +108,7 @@ export default function Join() {
         }, 5000)
         navigate(`/welcome`)
       } catch (e) {
-        console.log(e.response)
+        // console.log(e.response)
         setServerSideError(e.response.data.message)
         setLoading(false)
       }

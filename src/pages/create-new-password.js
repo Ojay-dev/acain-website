@@ -12,7 +12,7 @@ export default function ({ location }) {
   const [error, setError] = useState()
 
   const onSubmit = async data => {
-    console.log(data)
+
 
     const params = new URLSearchParams(location.search.substring(1))
     const code = params.get("code")

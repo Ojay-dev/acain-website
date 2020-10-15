@@ -12,7 +12,6 @@ export default function () {
   const [error, setError] = useState()
 
   const onSubmit = async data => {
-    console.log(data)
 
     try {
       const resp = await axios.post(

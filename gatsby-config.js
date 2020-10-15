@@ -25,5 +25,6 @@ module.exports = {
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
+    `gatsby-plugin-material-ui`,
   ],
 }
