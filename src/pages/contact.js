@@ -6,44 +6,44 @@ import styles from "./contact.module.scss"
 import location from "../svgs/location.svg"
 import email from "../svgs/email.svg"
 import phone from "../svgs/phone.svg"
+import contact from "../svgs/contact.svg"
 
 export default function () {
   return (
     <Layout>
       <Title>Contact Us</Title>
-      <div className={styles.contactDetails}>
-        <div className={styles.contactDetails__contact}>
-          <div className={styles.contactinfo}>
-            <img
-              src={location}
-              alt="location icon"
-              className={styles.contactinfo__icon}
-            />
-            <p className={styles.contactinfo__text}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo arcu
-              urna, nunc nunc quisque. Lectus ipsum lorem euismod sed.
-            </p>
-          </div>
-
-          <div className={styles.contactinfo}>
-            <img
-              src={email}
-              alt="mail icon"
-              className={styles.contactinfo__icon}
-            />
-            <p className={styles.contactinfo__text}>Loremipsum@mail.com</p>
-          </div>
-
-          <div className={styles.contactinfo}>
-            <img
-              src={phone}
-              alt="phone icon"
-              className={styles.contactinfo__icon}
-            />
-            <p className={styles.contactinfo__text}>012-3456-78911</p>
-          </div>
+      <div className={styles.contactDetails__contact}>
+        <div className={styles.contactinfo}>
+          <img
+            src={location}
+            alt="location icon"
+            className={styles.contactinfo__icon}
+          />
+          <p className={styles.contactinfo__text}>Lagos, Nigeria.</p>
         </div>
 
+        <div className={styles.contactinfo}>
+          <img
+            src={email}
+            alt="mail icon"
+            className={styles.contactinfo__icon}
+          />
+          <p className={styles.contactinfo__text}>hello@acain.ng</p>
+        </div>
+
+        <div className={styles.contactinfo}>
+          <img
+            src={phone}
+            alt="phone icon"
+            className={styles.contactinfo__icon}
+          />
+          <p className={styles.contactinfo__text}>+234 0808 3719 622</p>
+        </div>
+      </div>
+
+      <div className={styles.contactDetails}>
+        <img src={contact} alt="illustration" className={styles.contactDetails__illustration}/>
+        
         <form
           onSubmit={e => {
             e.preventDefault()
@@ -113,7 +113,7 @@ export default function () {
             />
           </div>
 
-          <input type="submit" value="Send" className={styles.form__submit}/>
+          <input type="submit" value="Send" className={styles.form__submit} />
         </form>
       </div>
     </Layout>

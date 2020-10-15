@@ -1,28 +1,60 @@
 @import "../styles/global";
 
 .contactDetails {
-  @include margin-width($margin: 4.4rem auto);
+  @include margin-width($margin: 2rem auto);
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include margin-width();
+    margin-top: 3rem;
+  }
+
+  &__illustration {
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    &__contact {
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-top: 3rem;
+    }
+  }
+
   @media screen and (min-width: 1024px) {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 6rem;
+    &__illustration {
+      width: 45%;
+    }
   }
 }
 
 .contactinfo {
   display: flex;
-  flex-direction: column;
-  // align-items: center;
+  // justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
   &:last-child {
     margin-bottom: 0;
   }
 
   &__text {
-    margin: 0;
+    margin: 0 0 0 1rem;
   }
   &__icon {
     width: fit-content;
     margin-bottom: 0.5rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
   }
 
   @media screen and (min-width: 1024px) {
@@ -31,7 +63,8 @@
 }
 
 .form {
-  margin-top: 6rem;
+  margin-top: 2rem;
+  margin-bottom: 6rem;
   &__inputSection {
     display: flex;
     flex-direction: column;
