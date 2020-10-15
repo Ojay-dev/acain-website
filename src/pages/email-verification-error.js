@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby";
 import Layout from "../components/layout"
 import styles from "./email-verification-error.module.scss"
 
@@ -19,9 +20,9 @@ export default function () {
         <span className={styles.verifyError__text}>
           Click on this link to retry your Email verification
         </span>
-        <a href="#" className={styles.verifyError__link}>
+        <Link to="/forgot-password" className={styles.verifyError__link}>
           Retry
-        </a>
+        </Link>
       </div>
     </Layout>
   )

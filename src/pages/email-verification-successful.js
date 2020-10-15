@@ -16,11 +16,7 @@ export default function () {
           alt="people"
           className={styles.verifySuccess__image}
         />
-        <span className={styles.verifySuccess__text}>
-          Proceed to pay for your annual Associate membership fee
-        </span>
 
-        <a href="#" className={styles.verifySuccess__link}>Make payment</a>
       </div>
     </Layout>
   )

@@ -1,8 +1,6 @@
 import React, { useState } from "react"
 import axios from "axios"
 import { navigate } from "gatsby"
-import { Link } from "gatsby"
-import { handleLogin } from "../services/auth"
 import { useForm } from "react-hook-form"
 import styles from "./create-new-password.module.scss"
 

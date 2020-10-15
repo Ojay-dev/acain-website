@@ -46,6 +46,7 @@ export default function ({ navItems }) {
         className={styles.menuBtn}
         onClick={toggleMenu}
         role="button"
+        tabIndex={0}
         onKeyDown={toggleMenu}
       >
         <span
