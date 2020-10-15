@@ -2,9 +2,7 @@ import React from "react"
 import axios from "axios"
 import { graphql, Link } from "gatsby"
 import { useForm } from "react-hook-form"
-import Snackbar from "@material-ui/core/Snackbar"
-import MuiAlert from "@material-ui/lab/Alert"
-import { makeStyles } from "@material-ui/core/styles"
+import SnackBar from "../components/snackBar"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
@@ -42,38 +40,21 @@ function Member(props) {
   )
 }
 
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />
-}
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: "100%",
-    "& > * + *": {
-      marginTop: theme.spacing(2),
-    },
-  },
-}))
-
 export default function ({ data }) {
   let post = data.allMarkdownRemark
 
   const { register, handleSubmit } = useForm()
-  const classes = useStyles()
   const [openSnackbar, setOpenSnackbar] = React.useState({
     open: false,
     status: null,
+    message: "",
   })
 
-  const handleOpen = status => {
-    setOpenSnackbar({ open: true, status })
+  const handleOpen = newState => {
+    setOpenSnackbar({ open: true, ...newState })
   }
 
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return
-    }
-
+  const handleClose = () => {
     setOpenSnackbar({ ...openSnackbar, open: false })
   }
 
@@ -81,17 +62,27 @@ export default function ({ data }) {
     if (data.email === "") {
       return
     }
-    
+
     try {
       const resp = await axios.post(
         "https://acain.herokuapp.com/api/v1/subscribers",
         data
-        )
-        handleOpen(resp.data.status)
-      } catch (error) {
-        handleOpen(error.response.status)
-      }
+      )
+      handleOpen({
+        status: resp.data.status,
+        message: "You have subcribe to our Monthly Newsletter!",
+      })
+    } catch (error) {
+      const status = error.response.status
+      handleOpen({
+        status,
+        message:
+          status === 400
+            ? "You are already on our Monthly Newsletter Subscription list!"
+            : "Invalid Email Address",
+      })
     }
+  }
 
   return (
     <React.Fragment>
@@ -197,41 +188,12 @@ export default function ({ data }) {
           </form>
         </div>
       </Layout>
-
-      <div className={classes.root}>
-        <Snackbar
-          open={openSnackbar.open && openSnackbar.status === 201}
-          autoHideDuration={3000}
-          anchorOrigin={{ vertical: "top", horizontal: "center" }}
-          onClose={handleClose}
-        >
-          <Alert onClose={handleClose} severity="success">
-            You have subcribe to our Monthly Newsletter!
-          </Alert>
-        </Snackbar>
-
-        <Snackbar
-          open={openSnackbar.open && openSnackbar.status === 400}
-          autoHideDuration={3000}
-          anchorOrigin={{ vertical: "top", horizontal: "center" }}
-          onClose={handleClose}
-        >
-          <Alert onClose={handleClose} severity="error">
-            You are already on our Monthly Newsletter Subscription list!
-          </Alert>
-        </Snackbar>
-
-        <Snackbar
-          open={openSnackbar.open && openSnackbar.status === 422}
-          autoHideDuration={3000}
-          anchorOrigin={{ vertical: "top", horizontal: "center" }}
-          onClose={handleClose}
-        >
-          <Alert onClose={handleClose} severity="error">
-            Inavlid Email Address!
-          </Alert>
-        </Snackbar>
-      </div>
+      <SnackBar
+        openSnackbar={openSnackbar}
+        handleClose={handleClose}
+        severity={openSnackbar.status === 201 ? "success" : "error"}
+        message={openSnackbar.message}
+      />
     </React.Fragment>
   )
 }
