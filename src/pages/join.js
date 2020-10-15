@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { navigate } from "gatsby"
 import { Link } from "gatsby"
 import { useForm } from "react-hook-form"
-import Loader from "../components/loader"
 import { FormTitle } from "../components/input"
 import SnackBar from "../components/snackBar"
 import { StepOne, StepTwo, StepThree } from "../components/joinFormSteps"
@@ -128,10 +127,6 @@ export default function Join() {
       }
     }
   }
-
-  // if (loading) {
-  //   return <Loader />
-  // }
 
   return (
     <React.Fragment>

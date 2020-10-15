@@ -89,6 +89,7 @@ export function SubmitInput(props) {
         type="submit"
         value={props.value}
         className={styles.submit__input}
+        disabled={props.isDisabled}
       />
     </div>
   )
