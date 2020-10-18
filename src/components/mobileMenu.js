@@ -5,12 +5,18 @@ import styles from "./mobileMenu.module.scss"
 import avatar from "../svgs/avatar.svg"
 
 function LogInUserMenu() {
+  const [loggedInMenu, setLoggedInMenu] = useState(false)
+  const showLoggedInMenu = () => setLoggedInMenu(!loggedInMenu)
+
   return (
     <div className={styles.loggedInUserDetail}>
       <div className={styles.loggedInUserDetail__imageCropper}>
         <img src={avatar} alt="avatar" />
       </div>
-      <div className={styles.loggedInUserDetail__nameSection}>
+      <div
+        className={styles.loggedInUserDetail__nameSection}
+        onClick={showLoggedInMenu}
+      >
         <h4 className={styles.loggedInUserDetail__text}>Welcome Tonye !</h4>
         <svg
           width="15"
@@ -28,6 +34,37 @@ function LogInUserMenu() {
       <div className={styles.loggedInUserDetail__subtext}>
         <span className={styles.loggedInUserDetail__status}>Status: </span>
         Full-Member
+      </div>
+
+      <div
+        className={`${styles.loggedInUserDetail__dropdown} ${
+          loggedInMenu ? "" : styles.dnone
+        }`}
+      >
+        <ul className={styles.droplink}>
+          <li className={styles.droplink__item}>
+            <Link to="#" className={styles.droplink__link}>
+              Profile
+            </Link>
+          </li>
+          <li className={styles.droplink__item}>
+            <Link to="#" className={styles.droplink__link}>
+              Books
+            </Link>
+          </li>
+          <li className={styles.droplink__item}>
+            <Link
+              to="/"
+              className={styles.droplink__link}
+              onClick={event => {
+                event.preventDefault()
+                logout(() => navigate(`/sign-in`))
+              }}
+            >
+              Sign out
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
   )
