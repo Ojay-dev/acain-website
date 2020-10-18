@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import axios from "axios"
 import { Link, navigate } from "gatsby"
 import Loader from "../components/loader"
+
 import { logout, getUser } from "../services/auth"
 import styles from "./welcome.module.scss"
 import payment from "../svgs/payment.svg"
@@ -30,7 +31,6 @@ export default function () {
         config
       )
       const { data } = resp.data
-      // console.log(data)
       window.location = data.link
     } catch (error) {
       setLoading(false)

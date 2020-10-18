@@ -33,11 +33,56 @@ function LogInUserMenu() {
   )
 }
 
+function MobileNavLink({ navItem }) {
+  const [showSubMenu, setShowSubMenu] = useState(false)
+  const toggleSubMenu = () => setShowSubMenu(!showSubMenu)
+
+  return (
+    <div className={styles.item}>
+      <li>
+        <Link to={navItem.to} className={styles.link} onClick={toggleSubMenu}>
+          {navItem.text}{" "}
+          {navItem.dropdown ? (
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 10 10"
+              fill="white"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ marginLeft: 2 }}
+            >
+              <path d="M6.9125 3.4563L5 5.36463L3.0875 3.4563L2.5 4.0438L5 6.5438L7.5 4.0438L6.9125 3.4563Z" />
+            </svg>
+          ) : null}
+        </Link>
+      </li>
+      {navItem.dropdown ? (
+        <div
+          className={styles.dropdownContent}
+          // style={showSubMenu ? null : { display: "none" }}
+        >
+          {navItem.dropdownMenu.map((submenu, idx) => {
+            return (
+              <Link
+                to={`/${submenu.toLowerCase().split(" ").join("-")}`}
+                className={`${styles.dropdownContent__dropdownLink} ${
+                  showSubMenu ? "" : styles.dnone
+                }`}
+                key={idx}
+              >
+                {submenu}
+              </Link>
+            )
+          })}
+        </div>
+      ) : null}
+    </div>
+  )
+}
+
 export default function ({ navItems }) {
   const [showMenu, setShowMenu] = useState(false)
-  const [showSubMenu, setShowSubMenu] = useState(false)
   const toggleMenu = () => setShowMenu(!showMenu)
-  const toggleSubMenu = () => setShowSubMenu(!showSubMenu)
 
   return (
     <React.Fragment>
@@ -63,49 +108,7 @@ export default function ({ navItems }) {
           style={!isLoggedIn() ? { marginTop: "8rem" } : null}
         >
           {navItems.map((navItem, idx) => (
-            <div className={styles.item} key={idx}>
-              <li>
-                <Link
-                  to={navItem.to}
-                  className={styles.link}
-                  onClick={toggleSubMenu}
-                >
-                  {navItem.text}{" "}
-                  {navItem.dropdown ? (
-                    <svg
-                      width="10"
-                      height="10"
-                      viewBox="0 0 10 10"
-                      fill="white"
-                      xmlns="http://www.w3.org/2000/svg"
-                      style={{ marginLeft: 2 }}
-                    >
-                      <path d="M6.9125 3.4563L5 5.36463L3.0875 3.4563L2.5 4.0438L5 6.5438L7.5 4.0438L6.9125 3.4563Z" />
-                    </svg>
-                  ) : null}
-                </Link>
-              </li>
-              {/* {navItem.dropdown ? (
-                <div
-                  className={`${styles.dropdownContent} ${
-                    showSubMenu ? "" : styles.dnone
-                  }`}
-                  // style={showSubMenu ? null : { display: "none" }}
-                >
-                  {navItem.dropdownMenu.map((submenu, idx) => {
-                    return (
-                      <Link
-                        to={`/${submenu.toLowerCase().split(" ").join("-")}`}
-                        className={styles.dropdownContent__dropdownLink}
-                        key={idx}
-                      >
-                        {submenu}
-                      </Link>
-                    )
-                  })}
-                </div>
-              ) : null} */}
-            </div>
+            <MobileNavLink navItem={navItem} key={idx} />
           ))}
         </ul>
 

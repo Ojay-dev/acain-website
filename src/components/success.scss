@@ -6,7 +6,7 @@ div.failure {
   transform: translate(-50%, -50%);
 }
 
-svg {
+div.success > svg, div.failure > svg {
   width: 100px;
   display: block;
   margin: 0 auto;

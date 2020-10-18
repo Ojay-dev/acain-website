@@ -6,6 +6,9 @@
   height: 20px;
   width: 28px;
   cursor: pointer;
+  &:focus {
+    outline: none;
+  }
   @include transition-ease;
   @media screen and (min-width: 1200px) {
     display: none;

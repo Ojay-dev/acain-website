@@ -10,41 +10,41 @@ const Failure = () => {
         viewBox="0 0 130.2 130.2"
       >
         <circle
-          class="path circle"
+          className="path circle"
           fill="none"
           stroke="red"
-          stroke-width="6"
-          stroke-miterlimit="10"
+          strokeWidth="6"
+          strokeMiterlimit="10"
           cx="65.1"
           cy="65.1"
           r="62.1"
         />
         <line
-          class="path line"
+          className="path line"
           fill="none"
           stroke="red"
-          stroke-width="6"
-          stroke-linecap="round"
-          stroke-miterlimit="10"
+          strokeWidth="6"
+          strokeLinecap="round"
+          strokeMiterlimit="10"
           x1="34.4"
           y1="37.9"
           x2="95.8"
           y2="92.3"
         />
         <line
-          class="path line"
+          className="path line"
           fill="none"
           stroke="red"
-          stroke-width="6"
-          stroke-linecap="round"
-          stroke-miterlimit="10"
+          strokeWidth="6"
+          strokeLinecap="round"
+          strokeMiterlimit="10"
           x1="95.8"
           y1="38"
           x2="34.4"
           y2="92.2"
         />
       </svg>
-      <p class="error">Your payment transaction failed!</p>
+      <p className="error">Your payment transaction failed!</p>
     </div>
   )
 }
