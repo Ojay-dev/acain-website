@@ -29,7 +29,7 @@ const Success = () => {
           points="100.2,40.2 51.5,88.8 29.8,67.5 "
         />
       </svg>
-      <p className="success">Your payment transaction was successful!</p>
+      <p className="text success">Your payment transaction was successful!</p>
     </div>
   )
 }
