@@ -44,34 +44,3 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 }
 
-// exports.creatPages = ({ graphql, actions }) => {
-//   const { creatPage } = actions
-
-//   return new Promise(resolve => {
-//     graphql(`
-//       {
-//         allMarkdownRemark {
-//           edges {
-//             node {
-//               fields {
-//                 slug
-//               }
-//             }
-//           }
-//         }
-//       }
-//     `).then(result => {
-//       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-//         this.creatPage({
-//           path: node.fields.slug,
-//           component: path.resolve("./src/templates/board-info.js"),
-//           context: {
-//             slug: node.fields.slug,
-//           },
-//         })
-//       })
-
-//       resolve()
-//     })
-//   })
-// }

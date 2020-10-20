@@ -22,6 +22,10 @@ module.exports = {
         path: `${__dirname}/content/board-images`,
       },
     },
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/app/*`] },
+    },
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",

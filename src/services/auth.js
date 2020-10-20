@@ -7,8 +7,9 @@ export const getUser = () =>
     ? JSON.parse(window.localStorage.getItem("gatsbyUser"))
     : {}
 
-const setUser = user =>
+export const setUser = user => {
   window.localStorage.setItem("gatsbyUser", JSON.stringify(user))
+}
 
 export const handleLogin = async loginData => {
   try {
@@ -30,6 +31,7 @@ export const handleJoin = async userData => {
       userData
     )
     const { data } = resp.data
+    // UserContext(data)
     return setUser(data)
   } catch (e) {
     throw e

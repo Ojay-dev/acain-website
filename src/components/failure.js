@@ -44,7 +44,7 @@ const Failure = () => {
           y2="92.2"
         />
       </svg>
-      <p className="error">Your payment transaction failed!</p>
+      <p className="text error">Your payment transaction failed!</p>
     </div>
   )
 }

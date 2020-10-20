@@ -140,6 +140,8 @@ function About() {
 }
 
 export default function () {
+  // const user = useContext(UserContext)
+  // console.log(user);
   return (
     <Layout>
       <Hero />
