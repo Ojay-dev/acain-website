@@ -17,7 +17,7 @@ async function verifyPayment(transaction, setTransactionStatus) {
 
   try {
     const resp = await axios.put(
-      `http://localhost:4000/api/v1/pay`,
+      `https://acain.herokuapp.com/api/v1/pay`,
       bodyParameters,
       config
     )
@@ -28,7 +28,7 @@ async function verifyPayment(transaction, setTransactionStatus) {
       ;(async () => {
         try {
           const resp = await axios.get(
-            `http://localhost:4000/api/v1/profile`,
+            `https://acain.herokuapp.com/api/v1/profile`,
             config
           )
 
@@ -50,7 +50,7 @@ async function verifyPayment(transaction, setTransactionStatus) {
     console.log(error.response)
     setTransactionStatus(2)
     setTimeout(() => {
-      navigate("/welcome")
+      navigate("/app/welcome")
     }, 1500)
   }
 }
