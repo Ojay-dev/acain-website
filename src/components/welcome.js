@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import axios from "axios"
 import { Link, navigate } from "gatsby"
-import Loader from "../components/loader"
+import Loader from "./loader"
 
-import { logout, getUser, setUser, isLoggedIn } from "../services/auth"
+import { logout, getUser, isLoggedIn } from "../services/auth"
 import styles from "./welcome.module.scss"
 import payment from "../svgs/payment.svg"
 
-const consistantCapitalizeFirstLetter = string => {
-  return string.charAt(0).toUpperCase() + string.substring(1)
-}
+// const consistantCapitalizeFirstLetter = string => {
+//   return string.charAt(0).toUpperCase() + string.substring(1)
+// }
 
-export default function ({location}) {
+export default function () {
   const [loading, setLoading] = useState(false)
-  const { firstname, membershipType, access_token } = getUser()
+  const { firstname, access_token } = getUser()
 
   const config = {
     headers: { Authorization: `Bearer ${access_token}` },
@@ -31,7 +31,7 @@ export default function ({location}) {
     try {
       setLoading(true)
       const resp = await axios.post(
-        "http://localhost:4000/api/v1/pay",
+        "https://acain.herokuapp.com/api/v1/pay",
         bodyParameters,
         config
       )
@@ -51,9 +51,9 @@ export default function ({location}) {
     <div className={styles.welcome}>
       <h2 className={styles.welcome__text}>Welcome, {firstname}.</h2>
       <p className={styles.welcome__subtext}>
-        Proceed to pay your
-        {consistantCapitalizeFirstLetter(membershipType).split("_").join(" ")}{" "}
-        fee of ₦5,000 before you can proceed with your account
+        Proceed to pay your membership fee of ₦5,000 before you can proceed with
+        your account
+        {/* {consistantCapitalizeFirstLetter(membershipType).split("_").join(" ")}{" "} */}
       </p>
 
       <img src={payment} alt="pasture icon" className={styles.welcome__image} />

@@ -28,7 +28,7 @@ export default function () {
     try {
       setLoading(true)
       await handleLogin(data)
-      navigate(`/welcome`)
+      navigate(`/app/welcome`)
     } catch (e) {
       // console.log(e.response)
       const { status } = e.response.data

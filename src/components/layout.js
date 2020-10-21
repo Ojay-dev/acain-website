@@ -21,7 +21,7 @@ export default ({ children }) => {
   })
 
   if (isLoggedIn() && !getUser().lastPayment) {
-    navigate("/welcome")
+    navigate("/app/welcome")
   }
 
   return (

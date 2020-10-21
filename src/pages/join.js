@@ -115,7 +115,7 @@ export default function Join() {
       try {
         setLoading(true)
         await handleJoin(userDetails)
-        navigate(`/welcome`)
+        navigate(`/app/welcome`)
       } catch (e) {
         // console.log(e.response)
         const { status, message } = e.response.data

@@ -3,14 +3,12 @@ import { navigate } from "gatsby"
 import { Router } from "@reach/router"
 import { getUser, isLoggedIn } from "../services/auth"
 import PrivateRoute from "../components/privateRoute"
-import Layout from "../components/layout"
 import Profile from "../components/profile"
-// import Login from "../components/login"
+import Welcome from "../components/welcome"
 
 const App = ({ location }) => {
   if (isLoggedIn() && !getUser().lastPayment) {
-    debugger
-    navigate("/welcome")
+    navigate("/app/welcome")
   }
 
   if (location.pathname === "/app") {
@@ -18,12 +16,11 @@ const App = ({ location }) => {
   }
 
   return (
-    <Layout>
       <Router>
         <PrivateRoute path="/app/profile" component={Profile} />
+        <PrivateRoute path="/app/welcome" component={Welcome} />
         {/* <Login path="/app/login" /> */}
       </Router>
-    </Layout>
   )
 }
 

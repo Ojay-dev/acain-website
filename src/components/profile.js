@@ -1,17 +1,19 @@
 import React from "react"
 import { useForm } from "react-hook-form"
+
+import Layout from "./layout"
 import Title from "./page-title"
 import styles from "./profile.module.scss"
 
 export default function () {
-  const { register, handleSubmit, errors } = useForm()
+  const { register, handleSubmit } = useForm()
 
   const onSubmit = data => {
     console.log(data)
   }
 
   return (
-    <>
+    <Layout>
       <Title>Profile</Title>
       <form className={styles.profile} onSubmit={handleSubmit(onSubmit)}>
         <h3 className={styles.header}>Basic Info</h3>
@@ -163,6 +165,6 @@ export default function () {
           className={styles.profile__submit}
         />
       </form>
-    </>
+    </Layout>
   )
 }
