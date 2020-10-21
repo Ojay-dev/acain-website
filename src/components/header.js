@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import MobileMenu from "./mobileMenu"
 import HeaderLinkList from "./HeaderLinkList"
-import { isLoggedIn, logout } from "../services/auth"
+import { isLoggedIn, logout, getUser } from "../services/auth"
 import { navigate } from "gatsby"
 import styles from "./header.module.scss"
 import logo from "../svgs/logo-header.svg"
@@ -35,6 +35,7 @@ const nav = {
 }
 
 export default function () {
+  const { firstname} = getUser()
   return (
     <header className={styles.header}>
       <Link to="/">
@@ -61,7 +62,7 @@ export default function () {
           <div className={styles.imageCropper}>
             <img src={avatar} alt="avatar" className={styles.user__image} />
           </div>
-          <span className={styles.user__text}>Welcome Tonye !</span>
+          <span className={styles.user__text}>Welcome {firstname} !</span>
           <span>
             <img src={expand} alt="" />
           </span>
@@ -80,7 +81,7 @@ export default function () {
               </li>
               <li className={styles.droplink__item}>
                 <Link
-                  to="/"
+                  to="#"
                   className={styles.droplink__link}
                   onClick={event => {
                     event.preventDefault()

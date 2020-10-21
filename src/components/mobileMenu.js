@@ -1,12 +1,13 @@
 import React, { useState } from "react"
 import { Link, navigate } from "gatsby"
-import { isLoggedIn, logout } from "../services/auth"
+import { isLoggedIn, logout, getUser } from "../services/auth"
 import styles from "./mobileMenu.module.scss"
 import avatar from "../svgs/avatar.svg"
 
 function LogInUserMenu() {
   const [loggedInMenu, setLoggedInMenu] = useState(false)
   const showLoggedInMenu = () => setLoggedInMenu(!loggedInMenu)
+  const { firstname } = getUser()
 
   return (
     <div className={styles.loggedInUserDetail}>
@@ -16,8 +17,13 @@ function LogInUserMenu() {
       <div
         className={styles.loggedInUserDetail__nameSection}
         onClick={showLoggedInMenu}
+        onKeyDown={showLoggedInMenu}
+        role="button"
+        tabIndex={0}
       >
-        <h4 className={styles.loggedInUserDetail__text}>Welcome Tonye !</h4>
+        <h4 className={styles.loggedInUserDetail__text}>
+          Welcome {firstname} !
+        </h4>
         <svg
           width="15"
           height="15"
