@@ -1,10 +1,44 @@
 import React from "react"
+import Countdown, { zeroPad } from "react-countdown"
 
 import Layout from "../components/layout"
 import styles from "./akada-book-festival.module.scss"
 import akada from "../images/akada-event.png"
 
 export default function () {
+  // Random component
+  const Completionist = () => <span className={styles.timer__end}>This event has commenced!</span>
+
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+      // Render a complete state
+      return <Completionist />
+    }
+
+    return (
+      <div className={styles.countdown__timersection}>
+        <div className={styles.timer}>
+          <div className={styles.timer__value}>{zeroPad(days)}</div>
+          <span className={styles.timer__subvalue}>Days</span>
+        </div>
+
+        <div className={styles.timer}>
+          <div className={styles.timer__value}>{zeroPad(hours)}</div>
+          <span className={styles.timer__subvalue}>Hours</span>
+        </div>
+
+        <div className={styles.timer}>
+          <div className={styles.timer__value}>{zeroPad(minutes)}</div>
+          <span className={styles.timer__subvalue}>Minutes</span>
+        </div>
+
+        <div className={styles.timer}>
+          <div className={styles.timer__value}>{zeroPad(seconds)}</div>
+          <span className={styles.timer__subvalue}>seconds</span>
+        </div>
+      </div>
+    )
+  }
   return (
     <Layout>
       <div className={styles.banner}>
@@ -19,27 +53,8 @@ export default function () {
         <h3 className={styles.countdown__title}>
           Countdown to Akada Festival 2020
         </h3>
-        <div className={styles.countdown__timersection}>
-          <div className={styles.timer}>
-            <div className={styles.timer__value}>43</div>
-            <span className={styles.timer__subvalue}>Days</span>
-          </div>
 
-          <div className={styles.timer}>
-            <div className={styles.timer__value}>07</div>
-            <span className={styles.timer__subvalue}>Hours</span>
-          </div>
-
-          <div className={styles.timer}>
-            <div className={styles.timer__value}>24</div>
-            <span className={styles.timer__subvalue}>Minutes</span>
-          </div>
-
-          <div className={styles.timer}>
-            <div className={styles.timer__value}>24</div>
-            <span className={styles.timer__subvalue}>seconds</span>
-          </div>
-        </div>
+        <Countdown date={Date.now() + 864000000} renderer={renderer} />
       </div>
 
       <div className={styles.dateSection}>
