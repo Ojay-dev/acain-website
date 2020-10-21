@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
+import CountUp from "react-countup"
+import VisibilitySensor from "react-visibility-sensor"
 
 import styles from "./index.module.scss"
 import Layout from "../components/layout"
@@ -61,17 +63,17 @@ function Achievement() {
   const achievementDta = {
     happiness: {
       image: happiness,
-      text: "200+",
+      text: 200,
       subtext: "Happy Members",
     },
     achievement: {
       image: reward,
-      text: "150+",
+      text: 150,
       subtext: "Achievement",
     },
     benefits: {
       image: increase,
-      text: "∞",
+      text: 50,
       subtext: "Benefits",
     },
   }
@@ -92,13 +94,20 @@ function Achievement() {
 
 function AchievementItem({ image, text, subtext }) {
   return (
-    <div className={styles.achievementItem}>
-      <img src={image} alt="happiness icon" />
-      <div className={styles.achievementItem__textSection}>
-        <div className={styles.achievementItem__text}>{text}</div>
-        <span className={styles.achievementItem__subtext}>{subtext}</span>
-      </div>
-    </div>
+    <CountUp start={0} end={text} redraw={true} suffix="+">
+      {({ countUpRef, start }) => (
+        <VisibilitySensor onChange={start} delayedCall>
+          <div className={styles.achievementItem}>
+            <img src={image} alt="happiness icon" />
+            <div className={styles.achievementItem__textSection}>
+              <div className={styles.achievementItem__text} ref={countUpRef} />
+
+              <span className={styles.achievementItem__subtext}>{subtext}</span>
+            </div>
+          </div>
+        </VisibilitySensor>
+      )}
+    </CountUp>
   )
 }
 
@@ -244,7 +253,7 @@ export default function () {
             // data-aos-duration="1000"
             // data-aos-anchor-placement="bottom-center"
           >
-            <Link to="/" className={styles.herolink__find}>
+            <Link to="/membership-benefits" className={styles.herolink__find}>
               See more
             </Link>
           </div>
