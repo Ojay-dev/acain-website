@@ -77,7 +77,10 @@
   }
 
   &__image {
-    width: 100%;
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   &__text {
@@ -136,6 +139,6 @@
   }
 }
 
-.imageCropper {
-  @include imageCropper($width: 3.125rem, $height: 3.125rem);
-}
+// .imageCropper {
+//   @include imageCropper($width: 3.125rem, $height: 3.125rem);
+// }

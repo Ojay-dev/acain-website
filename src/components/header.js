@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
+import axios from "axios"
 import MobileMenu from "./mobileMenu"
 import HeaderLinkList from "./HeaderLinkList"
 import { isLoggedIn, logout, getUser } from "../services/auth"
@@ -35,7 +36,31 @@ const nav = {
 }
 
 export default function () {
-  const { firstname} = getUser()
+  const [profile, setProfile] = useState()
+
+  const { access_token } = getUser()
+
+  const config = {
+    headers: { Authorization: `Bearer ${access_token}` },
+  }
+
+  useEffect(() => {
+    ;(async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:4000/api/v1/profile",
+          config
+        )
+        const { data } = response.data
+        setProfile(data)
+      } catch (error) {
+        console.log(error.response)
+      }
+    })()
+    /* eslint-disable */
+  }, [])
+
+  // const { firstname } = getUser()
   return (
     <header className={styles.header}>
       <Link to="/">
@@ -59,10 +84,15 @@ export default function () {
         </div>
       ) : (
         <div className={styles.user}>
-          <div className={styles.imageCropper}>
-            <img src={avatar} alt="avatar" className={styles.user__image} />
-          </div>
-          <span className={styles.user__text}>Welcome {firstname} !</span>
+          <img
+            src={profile && profile.avatar ? profile.avatar : avatar}
+            alt="avatar"
+            className={styles.user__image}
+          />
+
+          <span className={styles.user__text}>
+            Welcome, {profile && profile.firstname}
+          </span>
           <span>
             <img src={expand} alt="" />
           </span>
@@ -70,12 +100,12 @@ export default function () {
           <div className={styles.user__dropdown}>
             <ul className={styles.droplink}>
               <li className={styles.droplink__item}>
-                <Link to="#" className={styles.droplink__link}>
+                <Link to="/app/profile" className={styles.droplink__link}>
                   Profile
                 </Link>
               </li>
               <li className={styles.droplink__item}>
-                <Link to="#" className={styles.droplink__link}>
+                <Link to="/app/books" className={styles.droplink__link}>
                   Books
                 </Link>
               </li>
