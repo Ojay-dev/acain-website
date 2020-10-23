@@ -18,6 +18,11 @@ import book1 from "../images/book1.png"
 import book2 from "../images/book2.png"
 import book3 from "../images/book3.png"
 import book4 from "../images/book4.png"
+import book5 from "../images/Diary-of-a-Toddler-book.jpg"
+import book6 from "../images/tobi-bakes-cake-cover.jpg"
+import book7 from "../images/cover-1.png"
+import book8 from "../images/I_am_not_naughty.jpg"
+import book9 from "../images/tlts-cover.jpg"
 
 function Hero() {
   return (
@@ -265,31 +270,23 @@ export default function () {
 
         <div className={styles.book}>
           <div
-          // className={styles.book__item}
-          // data-aos="fade-up"
-          // data-aos-delay="50"
-          // data-aos-duration="1000"
-          // data-aos-anchor-placement="bottom-center"
-          >
-            <img src={book1} alt="Power Cut book" className={styles.image} />
-            <div className={styles.book__title}>Power Cut</div>
-            <span className={styles.book__subtitle}>Tonye Faloughi-Ekezie</span>
-          </div>
-
-          <div
             className={styles.book__item}
             // data-aos="fade-up"
-            // data-aos-delay="250"
+            // data-aos-delay="50"
             // data-aos-duration="1000"
             // data-aos-anchor-placement="bottom-center"
           >
-            <img
-              src={book2}
-              alt="Fruits and Vegetables book"
-              className={styles.image}
-            />
-            <div className={styles.book__title}>Fruits and Vegetables</div>
-            <span className={styles.book__subtitle}>Tonye Faloughi-Ekezie</span>
+            <div className={styles.book__cropper}>
+              <img
+                src={book5}
+                alt="Dairy of a toddler"
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.book__title}>Dairy of a Toddler</div>
+            <span className={styles.book__subtitle}>
+              Olubunmi Aboderin Talabi
+            </span>
           </div>
 
           <div
@@ -299,12 +296,10 @@ export default function () {
             // data-aos-duration="1000"
             // data-aos-anchor-placement="bottom-center"
           >
-            <img
-              src={book3}
-              alt="What is down Syndrome? book"
-              className={styles.image}
-            />
-            <div className={styles.book__title}>What is down Syndrome?</div>
+            <div className={styles.book__cropper}>
+              <img src={book1} alt="Power Cut" className={styles.image} />
+            </div>
+            <div className={styles.book__title}>Power Cut</div>
             <span className={styles.book__subtitle}>Tonye Faloughi-Ekezie</span>
           </div>
 
@@ -315,12 +310,102 @@ export default function () {
             // data-aos-duration="1000"
             // data-aos-anchor-placement="bottom-center"
           >
-            <img
-              src={book4}
-              alt="I can do it myself book"
-              className={styles.image}
-            />
-            <div className={styles.book__title}>I can do it myself</div>
+            <div className={styles.book__cropper}>
+              <img
+                src={book7}
+                alt="Dragons Canosing"
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.book__title}>Dragons Canosing</div>
+            <span className={styles.book__subtitle}>Basirat Razaq-Shuaib</span>
+          </div>
+
+          <div
+            className={styles.book__item}
+            // data-aos="fade-up"
+            // data-aos-delay="250"
+            // data-aos-duration="1000"
+            // data-aos-anchor-placement="bottom-center"
+          >
+            <div className={styles.book__cropper}>
+              <img src={book6} alt="Tobi Bakes Cake" className={styles.image} />
+            </div>
+            <div className={styles.book__title}>Tobi Bakes Cake</div>
+            <span className={styles.book__subtitle}>
+              Olubunmi Aboderin Talabi
+            </span>
+          </div>
+
+          <div
+            className={styles.book__item}
+            // data-aos="fade-up"
+            // data-aos-delay="250"
+            // data-aos-duration="1000"
+            // data-aos-anchor-placement="bottom-center"
+          >
+            <div className={styles.book__cropper}>
+              <img src={book8} alt="I am not Naughty" className={styles.image} />
+            </div>
+            <div className={styles.book__title}>I am not Naughty</div>
+            <span className={styles.book__subtitle}>
+            Basirat Razaq-Shuaib
+            </span>
+          </div>
+
+          <div
+            className={styles.book__item}
+            // data-aos="fade-up"
+            // data-aos-delay="450"
+            // data-aos-duration="1000"
+            // data-aos-anchor-placement="bottom-center"
+          >
+            <div className={styles.book__cropper}>
+              <img src={book2} alt="Fruits and Vegetables" className={styles.image} />
+            </div>
+            <div className={styles.book__title}>Fruits and Vegetables</div>
+            <span className={styles.book__subtitle}>Tonye Faloughi-Ekezie</span>
+          </div>
+          
+          <div
+            className={styles.book__item}
+            // data-aos="fade-up"
+            // data-aos-delay="450"
+            // data-aos-duration="1000"
+            // data-aos-anchor-placement="bottom-center"
+          >
+            <div className={styles.book__cropper}>
+              <img src={book3} alt="Fruits and Vegetables" className={styles.image} />
+            </div>
+            <div className={styles.book__title}>Fruits and Vegetables</div>
+            <span className={styles.book__subtitle}>Tonye Faloughi-Ekezie</span>
+          </div>
+          
+          <div
+            className={styles.book__item}
+            // data-aos="fade-up"
+            // data-aos-delay="450"
+            // data-aos-duration="1000"
+            // data-aos-anchor-placement="bottom-center"
+          >
+            <div className={styles.book__cropper}>
+              <img src={book9} alt="Fruits and Vegetables" className={styles.image} />
+            </div>
+            <div className={styles.book__title}>Fruits and Vegetables</div>
+            <span className={styles.book__subtitle}>Tonye Faloughi-Ekezie</span>
+          </div>
+          
+          <div
+            className={styles.book__item}
+            // data-aos="fade-up"
+            // data-aos-delay="450"
+            // data-aos-duration="1000"
+            // data-aos-anchor-placement="bottom-center"
+          >
+            <div className={styles.book__cropper}>
+              <img src={book4} alt="Fruits and Vegetables" className={styles.image} />
+            </div>
+            <div className={styles.book__title}>I can Do It Myself</div>
             <span className={styles.book__subtitle}>Tonye Faloughi-Ekezie</span>
           </div>
         </div>
