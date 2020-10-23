@@ -25,6 +25,10 @@ export default function () {
   }
 
   const onSubmit = async data => {
+    if (data.email === "" || data.password === "") {
+      return
+    }
+
     try {
       setLoading(true)
       await handleLogin(data)

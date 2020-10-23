@@ -22,7 +22,7 @@ function LogInUserMenu() {
         tabIndex={0}
       >
         <h4 className={styles.loggedInUserDetail__text}>
-          Welcome {firstname} !
+          Welcome, {firstname}
         </h4>
         <svg
           width="15"
@@ -49,12 +49,12 @@ function LogInUserMenu() {
       >
         <ul className={styles.droplink}>
           <li className={styles.droplink__item}>
-            <Link to="#" className={styles.droplink__link}>
+            <Link to="/app/profile" className={styles.droplink__link}>
               Profile
             </Link>
           </li>
           <li className={styles.droplink__item}>
-            <Link to="#" className={styles.droplink__link}>
+            <Link to="/app/books" className={styles.droplink__link}>
               Books
             </Link>
           </li>

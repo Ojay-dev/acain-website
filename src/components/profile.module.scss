@@ -7,7 +7,7 @@
     margin-bottom: 19rem;
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1200px) {
     width: 70%;
   }
 
@@ -26,7 +26,50 @@
       padding: 55px 5%;
       border: 1px solid #999999;
       box-sizing: border-box;
+      &:nth-child(2) {
+        display: grid;
+        grid-template-columns: 40% 60%;
+      }
     }
+  }
+  &__avatrCropper {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    margin: 2rem auto;
+
+    @media screen and (min-width: 768px) {
+      margin: 0;
+    }
+  }
+
+  &__avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid #d6d6d6;
+    margin: 1rem auto;
+    object-fit: cover;
+
+    @media screen and (min-width: 768px) {
+      margin: 0;
+    }
+  }
+
+  &__uploadBtn {
+    position: absolute;
+    right: 0;
+    bottom: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.21));
+
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #2c86d1;
+    cursor: pointer;
   }
 
   &__row {
@@ -93,6 +136,13 @@
     border: none;
     padding: 0 1.875rem;
     margin: 3rem auto 0;
+    cursor: pointer;
+  }
+
+  &__error {
+    color: red;
+    font-size: 0.75rem;
+    margin-top: 0.3rem;
   }
 }
 
